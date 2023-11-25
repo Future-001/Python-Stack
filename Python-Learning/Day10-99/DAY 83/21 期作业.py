@@ -1,0 +1,15 @@
+# 1.txt.创建b1到b20文件
+# 2.创建ba到bf文件
+# 3.创建bb1到bb20偶数的文件
+# 4.列出bb文件
+# 5.列出b10到b19文件
+# 6.列出bb10到bb19的文件
+# 7.修改bb19的创建日期
+# 8.将bb10到bb19文件复制到/home目录下面
+# 9.将bb10重命名为bc10
+# 10.将bb10文件删除
+# 预习：
+# http://linux.imock.club/command/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86.html
+# http://linux.imock.club/command/io%E6%93%8D%E4%BD%9C.html
+# http://linux.imock.club/command/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3.html
+# http://linux.imock.club/command/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7.html
