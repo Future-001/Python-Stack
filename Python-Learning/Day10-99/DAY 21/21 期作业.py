@@ -1,4 +1,4 @@
-# 1.txt、匹配一篇英文文章的标题 类似 The Voice Of China
+# 1、匹配一篇英文文章的标题 类似 The Voice Of China
 import re
 ret = re.findall('(?:[A-Z]\w* ?)+','The Voice Of China')
 print(ret)

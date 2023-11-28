@@ -1,4 +1,4 @@
-# 目前的市场时长，  P115 35分钟。
+# 目前的时长，  P115 35分钟。
 import requests
 
 import re

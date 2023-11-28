@@ -28,7 +28,7 @@
         .swapcase()    大小写翻转
         .title()       每个 单词 的首字母大写。
         .center(width,fillder)    默认填充物空格
-        .find(element)   通过元素找索引，找不到就返回-1.txt
+        .find(element)   通过元素找索引，找不到就返回-1
         .index(element)   通过元素找索引，找不到就报错
 
     tuple:
@@ -52,15 +52,15 @@
         .update(element)  增加一个元素，迭代着增加   既能增又能改  更新，有则改之，无则增加
         dict.fromekeys('键名',键值) 来自键，      将键名迭代着增加进入字典，作为键名，将键值作为其中每个键名的键值。
                 坑： 值共有一个， 一定要注意，这个是共用一个，共用一个，共用一个。。。。。。。
-                    dic=dict.fromekeys([1.txt,2,3],[])
-                    dic[1.txt].append(666)
+                    dic=dict.fromekeys([1,2,3],[])
+                    dic[1].append(666)
                     print(dic)
 
         循环一个字典时，如果改变这个字典的大小，就会报错。
-        dic = {'k1':1.txt,'k2':2,'k3':3,'k4':4}   将其中含有k 的键值对全都删除
+        dic = {'k1':1,'k2':2,'k3':3,'k4':4}   将其中含有k 的键值对全都删除
                 for i in dic.keys():   但是如果将  list(dic) 不会出错。 就是强转化成一个列表，和原来的字典无关，就能删除。
                     if 'k' in i:
-                        del dic[i               #  dictionary changed size during iteration
+                        del dic[i]               #  dictionary changed size during iteration
 
             另一个种方法就是：
             li = []
@@ -77,7 +77,8 @@
     ASCII  GBK Unicode  utf-8
     不同的编码之间能否相互识别？   不能
 
-    数据在内存中全部是以 Unicode 编码的（全，除去bytes），但是当你的数据用于网络传输或存储到硬盘中，必须是以非Unicode编码，也就是bytes类型。
+    数据在内存中全部是以 Unicode 编码的（全，除去bytes），但是当你的数据用于网络传输或存储到硬盘中，
+            必须是以非Unicode编码，也就是bytes类型。
     将 gbk   编码转换为 utf-8 都是通过 unicode 进行的，  ，decode，encode
     bytes:
             内存中的编码方式。非 Unicode   # utf-8
@@ -108,7 +109,7 @@ print(s.swapcase())             # 大小写翻转
 print(s.title())                  # 每个单词的首字母大写
 print(s.center(40,"*"))
 print(s.index('n'))    #  .index('element',start,end)
-print(s.find('name'))  # 都是根据元素去找索引，但是这个找不到返回-1.txt，index找不到报错
+print(s.find('name'))  # 都是根据元素去找索引，但是这个找不到返回-1，index找不到报错
 
 
 print()
@@ -143,7 +144,8 @@ while i<10:
 print(l1)
 #  将索引为奇数的元素删除，li只是举个例子，不让一行一行删。
 # 正常思路：
-# 先将所有的索引列出来，加以判断。 index%2==1.txt    但是一个错误的点，删除之后次序就已经变化了，每一次的index对应的元素不一致了。
+# 先将所有的索引列出来，加以判断。 index%2==1    但是一个错误的点，删除之后次序就已经变化了，
+#               每一次的index对应的元素不一致了。
 
 # 最简单的，按照切片去删除。
 

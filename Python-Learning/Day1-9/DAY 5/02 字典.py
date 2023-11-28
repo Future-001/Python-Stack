@@ -45,7 +45,7 @@ ty=([1,2,3],)
 print(ty,type(ty))
 print()
 
-# s="{'a':1.txt,'b':2}"
+# s="{'a':1,'b':2}"
 # print(dict(s))        目前所学的知识点，字典不能转换的
 
 print('===============================字典的使用：增删改查=========================')
@@ -125,13 +125,13 @@ for i in dic:
 print()
 
 print('=========================================课上练习========================================')
-dic = {"1.txt":1,"2":2,"3":3,"4":4}
+dic = {"1":1,"2":2,"3":3,"4":4}
 # # 删除"2"  2种方式
 print(dic.get('2'))
 del dic['2']
 print(dic)
 
-print(dic.pop('1.txt'))
+print(dic.pop('1'))
 print(dic)
 dic.setdefault('5',5)
 print(dic)
@@ -150,7 +150,8 @@ a=dict([('喜羊羊','美羊羊'),('小红','光头强'),{'修改后,长度长�
 dic.update(a)
 print(dic)
 
-print("现在自己的理解： 如果 update 字典，如果是上述类型的，那么当{}时，寻找是否和原字典有相同的键，有，修改，但是当第一个长度过长，那么直接增加")
+print("现在自己的理解： 如果 update 字典，如果是上述类型的，"
+      "那么当{}时，寻找是否和原字典有相同的键，有，修改，但是当第一个长度过长，那么直接增加")
 
 a= {'text':1,
     '3':"修改"}
@@ -169,7 +170,7 @@ print('  dicname.keys()    for 循环返回键名，但是注意：  不能进�
 for i in dic.keys():   # 高仿列表，就是将列表中的键名取出来，类似单独成一个列表去了,但是数据类型是 dict_keys的
     print(i,type(i))
 dic_l=dic.keys()
-print(dic_l,type(dic_l))   # dict_keys(['1.txt', '2', '3', '4']) <class 'dict_keys'>
+print(dic_l,type(dic_l))   # dict_keys(['1', '2', '3', '4']) <class 'dict_keys'>
 
 print('  dict_name.values()    for 循环返回键值，但是注意：  不能进行索引  ')
 for i in dic.values():
@@ -207,7 +208,7 @@ a,b=b,a
 print(a,b)
 
 print('==========================time 函数的使用=============================')
-dic = {"1.txt":1,"2":2,"3":3,"4":4}
+dic = {"1":1,"2":2,"3":3,"4":4}
 import time
 s='2'
 t=time.time()
@@ -227,7 +228,7 @@ print()
 
 # 字典是无序的,我现在
 dic = {"电脑":15000,"手机":8000,"耳机":4000,"老婆":1111}
-# 1.txt 电脑
+# 1 电脑
 # 2 手机
 # 3 耳机
 # 4 老婆
@@ -248,7 +249,7 @@ for i,k in enumerate(li):       # 第二个参数不写默认就是0,那么输�
 for i in enumerate(li):
     print(i,type(i))
 
-dic={'1.txt':1,'2':2,'3':3}
+dic={'1':1,'2':2,'3':3}
 for i,k in enumerate(dic):     # 取到的是键
     print(i,k,type(k))
 
@@ -270,7 +271,7 @@ print(dic[101][2]['汪峰'][2]['前妻2'][1])
 print(dic[103][2]["王宝强"]["马蓉"])
 
 home1 = dic[102][3][2]
-# {1.txt: ['李小龙', '吴京', '李连杰'],
+# {1: ['李小龙', '吴京', '李连杰'],
 # 2: {'谢霆锋': ['张柏芝', '王菲']},
 # 3: ['alex', 'wusir', '大象', '奇奇']}
 # print(home1)

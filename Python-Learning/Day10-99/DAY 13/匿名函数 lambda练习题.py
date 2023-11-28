@@ -5,7 +5,7 @@ func_list = []
 for i in range(10):
     func_list.append(lambda: i)
 
-v1 = func_list[0]()    # 主要是 lambda是啥意思不清楚。。。。。。。 当然，这里涉及到一个地址问题。
+v1 = func_list[0]()
 v2 = func_list[5]()
 print(v1, v2)
 

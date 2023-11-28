@@ -42,7 +42,8 @@ global  nonlocal
                                 ret = func1()         # <generator object func1 at 0x00000243A7F76F90>
                                 生成器 相当于迭代器， 取值用迭代器的方法，  一个 next 对应一个  yield
                                 但是； 如果 next多了，那么会出现 StopIteration
-                            注意： 如果有多个 yield 那么，必须使用返回值，不然多个 func1().__next__() 是从头开始得，不是从上个next开始
+                            注意： 如果有多个 yield 那么，必须使用返回值，
+                                        不然多个 func1().__next__() 是从头开始得，不是从上个next开始
 
                             return   yield 区别：
                                 return ： 结束函数，返回值
@@ -55,14 +56,14 @@ global  nonlocal
 
                      yield from:  相当于将 原来的 可迭代对象 变成了 迭代器， 一次取值一个元素。可以看看例 3
                                     优化了内存循环，节省了内存
-                                  l1 =[ 1.txt,23,3,4,5]
+                                  l1 =[ 1,23,3,4,5]
                                   yield from l1   # 此时他是迭代器呢
 
 
         列表推导式：  用一行代码构建一个比较复杂的有规律的列表 （只针对 复杂，有规律）       例子4
                     循环模式 ：   [ virable for virable in iterable]
 
-                                l1 = [i for i in range(1.txt,11)]
+                                l1 = [i for i in range(1,11)]
                                 print(l1)
 
                     筛选模式：   [ virable for virable in iterable if condition]
@@ -114,7 +115,7 @@ global  nonlocal
                   setattr()  staticmethod()  super()
 
 内置函数讲解：
-            eval()  剥去字符串的外衣，运算里面的代码   s = '1.txt+3'    print(eval(s))
+            eval()  剥去字符串的外衣，运算里面的代码   s = '1+3'    print(eval(s))
                     s1 = "{ 'name':'alex'}'
                     但是，可能会带来病毒，，，，不建议使用。  黑客劫持，修改代码， 字符串包装病毒。
 
@@ -129,7 +130,7 @@ def chain(*iterables):
         yield from it
     print(iterables,type(iterables))
     # yield from iterables  # 方法错了，可迭代对象，一次一个元素，你看看你的元素是什么。
-g = chain('abc',(0,1.txt,2))
+g = chain('abc',(0,1,2))
 print(list(g))  # 将迭代器转化成列表
 
 怎么让生成器 输出数值：  next ,for 循环 。 list 将其列表化
