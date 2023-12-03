@@ -6,7 +6,7 @@
 # reversed?
 
 # 不用中间变量交换a和b的值。
-# a = 1.txt
+# a = 1
 # b = 2
 #a,b=b,a
 
@@ -51,7 +51,7 @@ print("1.txt,2,3".split(','))
 # def f(a, b=[]) 这种写法有什么陷阱
 #  默认参数是可变的数据类型，那么传递的时候，不指定的话，这个默认的参数的地址是同一个，不会被释放。
 
-# 如何生成列表[1.txt, 4, 9, 16, 25, 36, 49, 64, 81, 100] ，尽量用一行实现。
+# 如何生成列表[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] ，尽量用一行实现。
 print([pow(i,2) for i in range(1,11)])
 
 # python一行print出1~100偶数的列表, (列表推导式, filter均可)
@@ -133,13 +133,13 @@ now()
 # # 获取结构中的所有name字段，使用逗号链接起来，并写入到 catelog.txt 文件中。
 # """
 # [
-#     {'id': 1.txt, 'name': 'Python', 'hide': False, 'category': 1.txt},
+#     {'id': 1, 'name': 'Python', 'hide': False, 'category': 1},
 #     {'id': 2, 'name': 'Linux运维', 'hide': False, 'category': 4},
-#     {'id': 4, 'name': 'Python进阶', 'hide': False, 'category': 1.txt},
-#     {'id': 7, 'name': '开发工具', 'hide': False, 'category': 1.txt},
-#     {'id': 9, 'name': 'Go语言', 'hide': False, 'category': 1.txt},
+#     {'id': 4, 'name': 'Python进阶', 'hide': False, 'category': 1},
+#     {'id': 7, 'name': '开发工具', 'hide': False, 'category': 1},
+#     {'id': 9, 'name': 'Go语言', 'hide': False, 'category': 1},
 #     {'id': 10, 'name': '机器学习', 'hide': False, 'category': 3},
-#     {'id': 11, 'name': '技术生涯', 'hide': False, 'category': 1.txt}
+#     {'id': 11, 'name': '技术生涯', 'hide': False, 'category': 1}
 # ]
 # 就是不断地 遍历这个列表，然后将其取出来，写入文件，如果存在相同名称，不写入就可以了
 # """

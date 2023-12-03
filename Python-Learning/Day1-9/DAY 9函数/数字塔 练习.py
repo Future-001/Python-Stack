@@ -6,10 +6,10 @@ else:
     print('输入有误>>>‘')
 
 
-fill = fill*(2*num-1)-        # 通式不太一样啊
+fill = fill*(2*num-1) - 1      # 通式不太一样啊
 
 for i in range(1,num+1):
-    j = '1.txt'
+    j = '1'
     t =1
     j=str(j)
     while t<i:

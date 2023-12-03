@@ -56,7 +56,7 @@
 
         .__bases__ 查看父类有哪些。  只显示上一层的所有的父类。不会显示在上层的类。
         绑定方法和普通的函数：  类名.  调用是函数     对象.  调用是方法
-                from types import FunctionType,MethonType
+                from types import FunctionType,MethodType
                 FunctionType: 函数
                 MethodType: 方法
         isinstance type:判断数据类型

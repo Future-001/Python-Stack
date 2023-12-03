@@ -8,7 +8,7 @@ import sys
 sys.path 是列表
 模块的匿名
 相对导入：
-random 模块    .random()    .randint(a,b)   .shuffle()    .uniform(a,b)    .sample(x,k)
+random 模块    .random()    .randint(a,b)   .shuffle(s)    .uniform(a,b)    .sample(x,k)
 
 =========================================  今日大纲 =========================================
 常用模块的介绍：
@@ -49,15 +49,15 @@ datetime:   日期时间模块
                     怎么进行数学运算：  创建时间对象,和  date  datetime timedelta 进行加减 即可
                                                 只有这三个可以进行计算，time 不可以进行计算
                     时间变化量的计算，会产生进位或者借位  ,计算后的 数据类型是： 原来更大的 时间类型
-                                        就算会超出去，他也不会变化 例如  2020-10-1.txt 加上 1.txt 天20 秒，不会显示 秒
+                                        就算会超出去，他也不会变化 例如  2020-10-1 加上 1 天20 秒，不会显示 秒
 
 os：
         os.remove('file_name')  记得可能要加路径 ， 绝对路径前面记得加 r
-        os.rename(old_name,nex_name)
+        os.rename(old_name,new_name)
         删除目录：  必须是空目录才可以删除
                     os.removedirs('path') 路径一定要是字符串  不放在回收站当中
                 如果目录不为空：
-                    1.txt，先进入底层，删除最内层目录中的文件删完，然后再删除文件夹
+                    1，先进入底层，删除最内层目录中的文件删完，然后再删除文件夹
                     2. 使用另一个模块  shutil   (shellutility)
                     import shutil
                     shutil.rmtree('path')
@@ -88,17 +88,17 @@ sys:
       获取命令行方式运行的脚本后面的参数
       import sys
       sys.argv[where]   获取到传入的参数的列表   第零个参数是脚本名，第一个开始才是其中真正的参数
-      print(sys.argv[1.txt])   #str 类型传入的参数
+      print(sys.argv[1])   #str 类型传入的参数
 
       # 有如下代码：
                 import sys
                 print('脚本名',sys.argv[0])
-                print('第一个参数',sys.argv[1.txt])   # hello
+                print('第一个参数',sys.argv[1])   # hello
                 print('第二个参数',sys.argv[2])   # world
                 arg1 = int(sys.argv[3])
                 arg2 = int(sys.argv[4])
                 print(arg1+arg2)    #  3
-                在命令行中   执行 python sys.argv[10] hello world 1.txt 2
+                在命令行中   执行 python sys.argv[10] hello world 1 2
 
     sys.path  解释器找模块的路径
     sys.modules   返回系统以及加载的模块
@@ -119,7 +119,7 @@ print(time.strftime('%Y-%m-%d  %H:%M:%S',time.localtime(19)))
 time.sleep(3)
 print(time.strftime('%Y-%m-%d  %H:%M:%S'))
 print(time.strptime('2000-08-24','%Y-%m-%d'))   # 格式必须一一对应  没指定，那么默认是 0
-# 如果日期没有指定的话，没有 0 年 0 月 0 日  不能是 0 的话那么会被赋值为 1.txt
+# 如果日期没有指定的话，没有 0 年 0 月 0 日  不能是 0 的话那么会被赋值为 1
 
 import datetime
 print(datetime.date(2011,1,1).year)

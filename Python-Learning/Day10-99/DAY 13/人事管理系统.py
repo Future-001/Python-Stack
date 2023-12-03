@@ -16,7 +16,6 @@ def sign_in():
                 f.seek(0)
                 for j in f:
                     j = j.strip()
-
                     user,pwd=j.split('|')
                     if user_name==user and pwd==passport:
                         print('登录成功')
@@ -75,7 +74,7 @@ def _admin():
 
 # 用完成一个员工信息表的增删功能（选做题，有时间做，没时间周末做）。
 #id，name，age，phone，job
-# 1.txt,Alex,22,13651054608,IT
+# 1,Alex,22,13651054608,IT
 # 2,太白,23,13304320533,Tearcher
 # 3,nezha,25,1333235322,IT   注意文件中间的标点符号
 

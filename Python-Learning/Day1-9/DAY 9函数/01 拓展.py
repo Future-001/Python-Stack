@@ -4,8 +4,6 @@
 
 url = 'https://www3.autoimg.cn/newsdfs/g3/M07/F0/1D/120x90_0_autohomecar__ChcCRVynRb6AM6guAADLT7nJgC0929.jpg'
 
-
-
 """
 # 图片的下载   没安装requests 模块，稍等
 # import requests
@@ -19,7 +17,7 @@ url = 'https://www3.autoimg.cn/newsdfs/g3/M07/F0/1D/120x90_0_autohomecar__ChcCRV
 
 import re
 from bs4 import BeautifulSoup
-# 1.txt python模拟浏览器向 http://www.autohome.com.cn/news/   发送请求
+# 1 python模拟浏览器向 http://www.autohome.com.cn/news/   发送请求
 r1 = requests.get('http://www.autohome.com.cn/news/')
 
 # 2 去字符串中找我需要的东西（先将二进制字符转换为字符串）
