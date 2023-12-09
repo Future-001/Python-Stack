@@ -7,7 +7,7 @@
 # select name,age,job where age=22
 # select name,age,job where name='alex'
 # select name,age,job where job='IT'
-# select name,age,job where phone like '133'
+# select name,age,job where phone='133'
 # select *
 # 文件处理 + input
 

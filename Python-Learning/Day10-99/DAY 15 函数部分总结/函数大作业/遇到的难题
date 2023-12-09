@@ -1,0 +1,5 @@
+1. json 格式的读取一次读取了文件的全部内容
+2. 一定要注意，文件的格式如果是json格式的，那么，登录验证时候一定也要将输入的内容转变为json 格式就，不然不等
+        例如： usr+"|"+pwd的md5格式，不是json格式匹配不上，
+3.  json格式的文件读取错误不是EOFError  而是  json.JSONDecodeError
+4.
