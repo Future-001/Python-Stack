@@ -7,7 +7,7 @@ while True:
     if msg.upper() == 'Q':break
     print(msg)
     send_msg = input(">>> ")
-    if send_msg.upper == 'Q':break
+    if send_msg.upper() == 'Q':break
     sk.send(send_msg.encode("utf-8"))
 
 

@@ -3,6 +3,9 @@ import socketserver
 
 class Myserver(socketserver.BaseRequestHandler):
     def handle(self):
+        """
+        登录，注册等功能，每个客户端都得执行一次。
+        """
         conn = self.request
         print("看看它是什么: ",self.request)
         print(self.client_address)

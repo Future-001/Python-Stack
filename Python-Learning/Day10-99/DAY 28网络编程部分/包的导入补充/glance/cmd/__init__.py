@@ -1,0 +1,1 @@
+print("in cmd",__name__)
