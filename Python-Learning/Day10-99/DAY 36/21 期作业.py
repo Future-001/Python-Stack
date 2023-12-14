@@ -1,5 +1,5 @@
 # 线程部分：读程序
-# 1.txt、程序从flag a执行到falg b的时间大致是多少秒？
+# 1、程序从flag a执行到falg b的时间大致是多少秒？
 #
 # import threading
 # import time

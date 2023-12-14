@@ -22,7 +22,7 @@ sk.send(str_dic.encode("utf-8"))    # 万一有粘包呢？可能就不太行了
 with open(abs_path,mode='rb') as f:
     # content = f.read()  # 内容少，直接读了
     # sk.send(content)
-    #文件比较大的时候
+    # 文件比较大的时候
     while filesize>0:
         content = f.read(1024)
         filesize-=1024

@@ -1,4 +1,4 @@
-# 1.txt.默写
+# 1.默写
 #
 #     创建库
 #     create database day39
