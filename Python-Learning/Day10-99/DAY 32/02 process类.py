@@ -4,7 +4,7 @@ multiprocessing :
             from multiprocessing import Process  这个首字母大写，是一个类，当然有process模块，二者不一样
 
 
-为什么要用 if __name__ == "__main__": =======> 指挥在主进程中执行的代码
+为什么要用 if __name__ == "__main__": =======> 只会在主进程中执行的代码
     windows:    进程之间的所有的内存是隔离开的
         主进程（父进程）加载顺序： 内置名称空间内容==> 全局名称空间 ==> os,Process,func p等
         执行到 p.start 开始加载子进程， import 父进程所在的文件 os Process func==> 此时 __name__
@@ -53,10 +53,9 @@ import os
 import time
 
 def func(args):
-
     print(args)
     time.sleep(1)
-    print("这里相当于子进程： ",os.getpid(), os.getppid())  # ppid parent process id
+    print("这里相当于子进程： ",os.getpid(), os.getppid())           # ppid parent process id
 
 
 print("windows 主进程和子进程都可以执行，下面的代码只在主进程中执行一次")

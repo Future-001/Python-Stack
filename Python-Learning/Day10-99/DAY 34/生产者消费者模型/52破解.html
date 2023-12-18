@@ -1,0 +1,2456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>『逆向资源区』 </title>
+
+<meta name="keywords" content="Reverse Code Engineering , Reverse Engineering , OllyDbg , OllyDbg Plugins , OllyScript , OllyDbg Scripts , IDA Pro , IDA Pro Plugins , IDA Pro Scripts , IDA Utilities , WinDBG , Immunity Debugger , Immunity Scripts , Immunity Plugins , SoftICE , Reversing Tutorial , Reversing Paper , RCE , Unpacking , Virtual Machines , Compressors , Packers , Protectors , Debugging , Anti Debugging , API , Hooking , Rootkit , Mathematics , Cryptography , Keygenning , Disassembling , Dongles , .NET , dotNET , Python , Exploits , Malware , Loader , Memory Patching , Portable Executable , PE , Programming , Coding , Reverse Engineering Tutorials , MacOS , Linux , Amiga , PLC , PLC Programming , Network , Security" />
+<meta name="description" content="加密解密相关软件发布区，收集最新最全的软件加密解密相关工具，工欲善其事必先利其器。 " />
+<meta name="generator" content="Discuz!" />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="https://www.52pojie.cn/" /><link rel="stylesheet" type="text/css" href="https://static.52pojie.cn/cache/style_1_common.css?KBQ" /><link rel="stylesheet" type="text/css" href="https://static.52pojie.cn/cache/style_1_forum_forumdisplay.css?KBQ" /><link rel="stylesheet" id="css_extstyle" type="text/css" href="./template/default/style/t5/style.css" />
+
+<meta name="application-name" content="吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn" />
+<link rel="archives" title="吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn" href="https://www.52pojie.cn/archiver/" />
+<link rel="alternate" type="application/rss+xml" title="吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn - 『逆向资源区』" href="https://www.52pojie.cn/forum.php?mod=rss&fid=4" />
+<link rel="stylesheet" id="css_widthauto" type="text/css" href='https://static.52pojie.cn/cache/style_1_widthauto.css?KBQ' />
+
+
+<link rel="stylesheet" id="css_responsive" type="text/css" href='https://static.52pojie.cn/cache/style_1_responsive.css?KBQ' />
+
+</head>
+
+<body id="nv_forum" class="pg_forumdisplay" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+<div class="wp">
+<div class="z"><a href="https://space.bilibili.com/544451485" target="_blank"  rel="nofollow">官方bilibili</a><a href="thread-349073-1-1.html" target="_blank"  style="color: red">官方入门教学培训</a></div>
+<div class="y">
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind"></a>
+<a href="thread-209287-1-1.html" title="修复各种访问不了论坛、访问论坛异常、验证码异常等各种问题的大杀器！" target="_blank" >【网络诊断修复工具】</a><a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="切换到窄版" class="switchwidth">切换到窄版</a>
+</div>
+</div>
+</div>
+
+<div id="hd">
+<div class="wp">
+<div class="hdc cl"><h2><a href="./" title="吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn"><img src="https://static.52pojie.cn/static/image/common/logo.png" alt="吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn" border="0" /></a></h2>
+<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="return lsSubmit();">
+<div class="fastlg cl">
+<span id="return_ls" style="display:none"></span>
+<div class="y pns">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td><label for="ls_username">帐号</label></td>
+<td><input type="text" name="username" id="ls_username" class="px vm xg1"  value="用户名/Email" onfocus="if(this.value == '用户名/Email'){this.value = '';this.className = 'px vm';}" onblur="if(this.value == ''){this.value = '用户名/Email';this.className = 'px vm xg1';}" tabindex="901" /></td>
+<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="7776000" tabindex="903" checked/>自动登录</label></td>
+<td>&nbsp;<a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&action=login&viewlostpw=1')">找回密码</a></td>
+</tr>
+<tr>
+<td><label for="ls_password">密码</label></td>
+<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902" /></td>
+<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+<td>&nbsp;<a href="member.php?mod=52register" class="xi2 xw1">注册[Register] </a></td>
+</tr>
+</table>
+<input type="hidden" name="quickforward" value="yes" />
+<input type="hidden" name="handlekey" value="ls" />
+</div>
+
+<div class="fastlg_fm y" style="margin-right: 10px; padding-right: 10px">
+<p><a href="https://www.52pojie.cn/connect.php?mod=login&op=init&referer=index.php&statfrom=login_simple"><img src="https://static.52pojie.cn/static/image/common/qq_login.gif" class="vm" alt="QQ登录" /></a></p>
+<p class="hm xg1" style="padding-top: 2px;">只需一步，快速开始</p>
+</div>
+</div>
+</form>
+</div>
+
+<div id="nv">
+<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu(4);})">快捷导航</a>
+<ul><li id="mn_portal" ><a href="portal.php" hidefocus="true" title="Portal"  >门户<span>Portal</span></a></li><li class="a" id="mn_forum" ><a href="forum.php" hidefocus="true" title="www"  >网站<span>www</span></a></li><li id="mn_Na063" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="forum.php?mod=guide&view=newthread" hidefocus="true" title="论坛最新帖子一览无余！"   style="color: yellow">新帖<span>论坛最新帖子一览无余！</span></a></li><li id="mn_Ne008" ><a href="search.php" hidefocus="true" title="站内搜索" target="_blank"   style="color: yellow">搜索<span>站内搜索</span></a></li><li id="mn_forum_11" ><a href="forum.php?mod=collection" hidefocus="true" title="Collection"  >专辑<span>Collection</span></a></li><li id="mn_N12a7" ><a href="misc.php?mod=ranklist" hidefocus="true" title="Ranklist"  >排行榜<span>Ranklist</span></a></li><li id="mn_N05be" ><a href="thread-143136-1-1.html" hidefocus="true" target="_blank"  >总版规</a></li><li id="mn_Na678" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="https://down.52pojie.cn" hidefocus="true" title="在线破解工具包，实时提供最新逆向资源！" target="_blank"   style="font-weight: bold;color: yellow">爱盘<span>在线破解工具包，实时提供最新逆向资源！</span></a></li><li id="mn_N0a2c" ><a href="misc.php?mod=faq" hidefocus="true" title="Help"  >帮助<span>Help</span></a></li></ul>
+<a style="float: right;display: inline;margin-top: 5px;margin-left: 3px;margin-right: 3px;" href="javascript:;" onclick="showWindow('csu_wechat_scan_scan','plugin.php?id=csu_wechat_scan:scan','get',0);return false;">
+		<img src="source/plugin/csu_wechat_scan/image/scan.gif">
+		</a></div>
+<ul class="p_pop h_pop" id="mn_Na063_menu" style="display: none"><li><a href="home.php?mod=follow&view=follow" hidefocus="true" target="_blank"  style="color: red">关注人的新帖</a></li><li><a href="forum.php?mod=guide&view=tech" hidefocus="true" target="_blank"  style="color: blue">技术新帖合集</a></li><li><a href="forum.php?mod=guide&view=soft" hidefocus="true" target="_blank"  style="color: green">最新软件合集</a></li><li><a href="forum.php?mod=forumdisplay&fid=2&filter=author&orderby=dateline" hidefocus="true" target="_blank" >原创发布新贴</a></li><li><a href="forum.php?mod=forumdisplay&fid=5&filter=author&orderby=dateline" hidefocus="true" target="_blank" >脱壳破解新帖</a></li><li><a href="forum.php?mod=forumdisplay&fid=65&filter=author&orderby=dateline" hidefocus="true" target="_blank" >移动安全新帖</a></li><li><a href="forum.php?mod=forumdisplay&fid=32&filter=author&orderby=dateline" hidefocus="true" target="_blank" >病毒分析新帖</a></li><li><a href="forum.php?mod=forumdisplay&fid=59&filter=author&orderby=dateline" hidefocus="true" target="_blank" >软件调试新贴</a></li><li><a href="forum.php?mod=forumdisplay&fid=6&filter=author&orderby=dateline" hidefocus="true" target="_blank" >动画发布新帖</a></li><li><a href="forum.php?mod=forumdisplay&fid=24&filter=author&orderby=dateline" hidefocus="true" target="_blank" >编程语言新帖</a></li></ul><ul class="p_pop h_pop" id="mn_home_4_menu" style="display: none"><li><a href="home.php?mod=spacecp&ac=invite" hidefocus="true" title="通过购买邀请码邀请好友注册论坛"  style="font-weight: bold;color: red">邀请好友注册</a></li></ul><div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><ul class="p_pop h_pop" id="mn_N99ef_menu" style="display: none"><li><a href="home.php?mod=space&do=reward&view=me" hidefocus="true" title="这里可以看到你发布的悬赏帖" target="_blank"  style="font-weight: bold;color: red">我的悬赏</a></li></ul><ul class="p_pop h_pop" id="mn_Na678_menu" style="display: none"><li><a href="https://down.52pojie.cn/Tools/" hidefocus="true" target="_blank" >Tools</a></li><li><a href="https://down.52pojie.cn/Logo/" hidefocus="true" target="_blank" >吾爱破解Logo</a></li><li><a href="https://down.52pojie.cn/Logo/Wallpaper/" hidefocus="true" target="_blank" >吾爱破解桌面壁纸</a></li><li><a href="https://down.52pojie.cn/%E5%90%BE%E7%88%B1%E7%A0%B4%E8%A7%A3%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/" hidefocus="true" target="_blank" >吾爱破解视频教程</a></li><li><a href="https://down.52pojie.cn/%E5%90%BE%E7%88%B1%E7%A0%B4%E8%A7%A3%E8%AE%BA%E5%9D%9B%E7%B2%BE%E5%8D%8E%E9%9B%86/" hidefocus="true" target="_blank" >吾爱破解论坛精华集</a></li><li><a href="https://down.52pojie.cn/Tools/Debuggers/" hidefocus="true" target="_blank" >吾爱破解专用版Ollydbg</a></li></ul><ul class="p_pop h_pop" id="mn_Ndb2c_menu" style="display: none"><li><a href="forum.php?mod=forumdisplay&fid=15&filter=typeid&typeid=182&orderby=dateline" hidefocus="true" >处理举报贴</a></li><li><a href="forum.php?mod=forumdisplay&fid=72&filter=author&orderby=dateline" hidefocus="true" >处理站务贴</a></li><li><a href="forum.php?mod=forumdisplay&fid=66&filter=author&orderby=dateline" hidefocus="true" >处理福利贴</a></li><li><a href="forum.php?mod=forumdisplay&fid=10&filter=author&orderby=dateline" hidefocus="true" >处理水区贴</a></li><li><a href="forum-23-1.html" hidefocus="true" >办公区</a></li><li><a href="forum-34-1.html" hidefocus="true" >证据区</a></li></ul><div id="mu" class="cl">
+</div><div class="comiis_nav">
+   <ul class="nav_ico02">
+<li><A href="forum-2-1.html" target="_blank" title="吾爱破解坛友原创作品展示，包含Windows原创工具，也有Android、iOS和Mac OS程序相应的原创程序！"><font color="green">原创发布区</font></A></li>
+<li><A href="forum-16-1.html" target="_blank" title="精品软件推荐，软件交流天地，汇集众多精彩评论，热心会员每日更新。找你所需要的，给你我分享的！">精品软件区</A></li>
+<li><A href="forum-4-1.html" target="_blank" title="加密解密相关软件发布区，包含最新最全的软件加密解密相关工具，工欲善其事必先利其器！"><font color="green">逆向资源区</font></A></li>
+<li><A href="forum-10-1.html" target="_blank" title="据说人滴祖先生活在水里">水漫金山区</A></li>
+<li><A href="forum-50-1.html" target="_blank" title="你的计算机又受到病毒的侵扰使你不知所措了？不要着急，让我们一起帮助你解决问题！"><font color="green">病毒救援区</font></A></li>
+<li><A href="forum-66-1.html" target="_blank" title="福利资讯、经验分享">福利经验区</A></li>
+   </ul>
+   <ul class="nav_ico03">
+<li><A href="forum-5-1.html" target="_blank" title="讨论Windows软件脱壳分析、软件逆向分析、代码逆向改造、虚拟机加密分析，也包括Mac OS等其他平台程序逆向分析一切尽在此！"><font color="blue">脱壳破解区</font></A></li>
+<li><A href="forum-65-1.html" target="_blank" title="讨论Android软件脱壳分析、Android软件逆向分析、Android系统安全分析、Android软件加密分析，当然iOS等移动程序逆向分析一切尽在此！"><font color="red"><B>移动安全区</B></font></A></li>
+<li><A href="forum-32-1.html" target="_blank" title="分析研究病毒木马技术，预防病毒木马，查杀病毒木马"><font color="blue">病毒分析区</font></A></li>
+<li><A href="forum-24-1.html" target="_blank" title="学习编程探讨编程技巧，共同分享程序源代码">编程语言区</A></li>
+<li><A href="forum-6-1.html" target="_blank" title="软件脱壳、软件汉化、软件逆向相关动画教程，学习心得分享。在这里我们可以携手并进，是我们汲取知识的伟大航路！"><font color="blue">动画发布区</font></A></li>
+<li><A href="forum-41-1.html" target="_blank" title="工欲善其事 必先利其器，从这里能找到你想要的利器">安全工具区</A></li>
+   </ul>
+   <ul class="nav_ico01">
+<li><A href="forum-13-1.html" target="_blank" title="开放注册信息，版块调整公告，站点信息发布，会员违规处理等"><font color="red"><B>站点公告</B></font></A></li>
+<li><A href="thread-147931-1-1.html" target="_blank" title="【吾爱破解站点导航帖】 - [让你快速融入吾爱破解大家庭]">站点导航</A></li>
+<li><A href="thread-143136-1-1.html" target="_blank" title="吾爱破解站点总版规！"><font color="blue"><B>站点总版规</B></font></A></li>
+<li><a href="forum-25-1.html" target="_blank" title="会员、版主、勋章、友情链接申请，发帖前请认真阅读本版规则！本区可以匿名发帖、跟帖相应的申请！">申请专区</a></li>
+<li><A href="forum-39-1.html" target="_blank" title="此版块只允许发布招聘和求职相关信息！本区可以匿名发帖，欢迎正规公司前来发布招聘信息！"><font color="green"><B>招聘求职</B></font></A></li>
+<li><A href="thread-309877-1-1.html" target="_blank" title=" 版规速读，主要关于如何给自己加违规和如何消违规"><B>违规怎么办</B></A></li>
+   </ul>
+   <ul class="nav_ico04" style="width:80px;">
+<li><A href="misc.php?mod=faq" target="_blank" title="有什么问题来这里看看吧，这里有你想知道的内容！"><font color="blue"><B>站点帮助</B></font></A></li>
+<li><A href="forum-72-1.html" target="_blank" title="如果你对我们有什么意见或者建议，请在此提出">站务处理</A></li>
+   </ul>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="scbar_mod" value="search" />
+<input type="hidden" name="srchtype" value="title" />
+<input type="hidden" name="srhfid" value="4" />
+<input type="hidden" name="srhlocality" value="forum::forumdisplay" />
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech speech /></td>
+<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+<strong class="xw1">热搜: </strong>
+
+<a href="search.php?mod=forum&amp;srchtxt=ctf&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">ctf</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%D0%C2%CA%D6&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">新手</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%CD%D1%BF%C7&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">脱壳</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%BD%CC%B3%CC&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">教程</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=Crackme&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">Crackme</a>
+
+</div>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="4" >本版</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+
+</div>
+</div>
+
+
+<div id="wp" class="wp">
+
+<style id="diy_style" type="text/css"></style>
+<div id="diynavtop" class="area"></div>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="首页">吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a><em>&raquo;</em><a href="forum.php">网站</a> <em>&rsaquo;</em> <a href="forum.php?gid=1">【 软件安全 】</a><em>&rsaquo;</em> <a href="forum-4-1.html">『逆向资源区』</a></div>
+</div><div class="wp">
+<div id="diy1" class="area"></div>
+</div>
+<div class="boardnav">
+<div id="ct" class="wp cl">
+
+<div class="mn">
+<div class="bm bml pbn">
+<div class="bm_h cl">
+<span class="o"><img id="forum_rules_4_img" src="https://static.52pojie.cn/static/image/common/collapsed_no.gif" title="收起/展开" alt="收起/展开" onclick="toggle_collapse('forum_rules_4')" /></span><span class="y">
+<a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=forum&amp;id=4&amp;handlekey=favoriteforum&amp;formhash=1988cdfc" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">收藏本版 <strong class="xi1" id="number_favorite" >(<span id="number_favorite_num">613</span>)</strong></a>
+<span class="pipe">|</span><a href="forum.php?mod=rss&amp;fid=4" class="fa_rss" target="_blank" title="RSS">订阅</a>
+</span>
+<h1 class="xs2">
+<a href="forum-4-1.html">『逆向资源区』</a>
+<span class="xs1 xw0 i">今日: <strong class="xi1">24</strong><b class="ico_fall">&nbsp;</b><span class="pipe">|</span>主题: <strong class="xi1">4912</strong><span class="pipe">|</span>排名: <strong class="xi1" title="上次排名:9">9</strong><b class="ico_increase">&nbsp;</b></span></h1>
+</div>
+<div class="bm_c cl pbn">
+<div>版主: <span class="xi2"><a href="home.php?mod=space&username=Hmily" class="notabs" c="1">Hmily</a>, <a href="home.php?mod=space&username=FleTime" class="notabs" c="1">FleTime</a></span></div><div id="forum_rules_4" style=";">
+<div class="ptn xg2"><font face="微软雅黑">此版块遵循论坛总则,一切规则行为以论坛总则为基础。<br />
+<br />
+<font size="3"><font color="#0000ff"><a href="http://www.52pojie.cn/forum-4-1.html" target="_blank">『逆向资源区』</a>收录了在逆向过程中会使用的绝大多数工具，工欲善其事必先利其器，好的工具在逆向破解工程中起到事半功倍的作用。</font></font><br />
+<br />
+<font color="#0000ff">本区根据工具的作用分成以下几类，分别做以中文解释说明，共大家参考:</font><br />
+<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=230" target="_blank">Android Tools</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;安卓程序逆向所用到的相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=122" target="_blank">Debuggers</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 动态调试工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=123" target="_blank">Disassemblers</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;反编译工具（静态分析为主）<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=124" target="_blank">PEtools</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;PE文件分析、查壳相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=125" target="_blank">Packers</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;给程序加壳相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=126" target="_blank">Patchers</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;给程序做补丁相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=129" target="_blank">Editors</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;程序资源编辑、文本操作相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=136" target="_blank">Cryptography</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;算法相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=131" target="_blank">Unpackers</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 脱壳机相关<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=133" target="_blank">Dongle</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 加密狗相关<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=128" target="_blank">.NET</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;微软.Net程序逆向相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=324" target="_blank">Scripts</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; IDA、OllyDbg、x64dbg等调试器的功能脚本<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=132" target="_blank">OllyDbg 1.x Plugin</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 动态调试工具OllyDbg 1.x的插件程序<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=207" target="_blank">OllyDbg 2.x Plugin</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 动态调试工具OllyDbg 2.x的插件程序<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=339" target="_blank">x64dbg Plugin</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 动态调试工具x64dbg的插件程序<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=134" target="_blank">IDA Plugin</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;反编译工具IDA的插件程序<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=241" target="_blank">Mac OSX</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Mac OSX系统程序逆向相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=382" target="_blank">Network Analyzer</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;抓包相关工具<br />
+【<a href="http://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=130" target="_blank">Other</a>】&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;其他相关程序<br />
+<br />
+<br />
+<font size="3"><font color="#0000ff">为了提供更加便捷使用，我们把一些常用的工具整理放到了网上，方便大家随时访问下载</font></font><br />
+<font size="3"><font color="#ff0000"><strong>爱盘：<a href="https://down.52pojie.cn/Tools/" target="_blank">https://down.52pojie.cn/Tools/</a></strong></font></font></font></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="drag">
+<div id="diy4" class="area"></div>
+</div>
+
+
+
+
+<div id="pgt" class="bm bw0 pgs cl">
+<span id="fd_page_top"><div class="pg"><strong>1</strong><a href="forum-4-2.html">2</a><a href="forum-4-3.html">3</a><a href="forum-4-4.html">4</a><a href="forum-4-5.html">5</a><a href="forum-4-6.html">6</a><a href="forum-4-7.html">7</a><a href="forum-4-8.html">8</a><a href="forum-4-9.html">9</a><a href="forum-4-10.html">10</a><a href="forum-4-99.html" class="last">... 99</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location='forum.php?mod=forumdisplay&fid=4&amp;page='+this.value;; doane(event);}" /><span title="共 99 页"> / 99 页</span></label><a href="forum-4-2.html" class="nxt">下一页</a></div></span>
+<span class="pgb y"  ><a href="forum.php">返&nbsp;回</a></span>
+<a href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=4')" title="发新帖"><img src="https://static.52pojie.cn/static/image/common/pn_post.png" alt="发新帖" /></a></div>
+<ul id="thread_types" class="ttp bm cl">
+<li id="ttp_all" class="xw1 a"><a href="forum-4-1.html">全部</a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=230">Android Tools<span class="xg1 num">278</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=122">Debuggers<span class="xg1 num">342</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=123">Disassemblers<span class="xg1 num">246</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=124">PEtools<span class="xg1 num">519</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=125">Packers<span class="xg1 num">620</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=126">Patchers<span class="xg1 num">206</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=129">Editors<span class="xg1 num">248</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=136">Cryptography<span class="xg1 num">74</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=131">Unpackers<span class="xg1 num">244</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=133">Dongle<span class="xg1 num">47</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=128">.NET<span class="xg1 num">383</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=324">Scripts<span class="xg1 num">177</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=132">OllyDbg 1.x Plugin<span class="xg1 num">293</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=207">OllyDbg 2.x Plugin<span class="xg1 num">39</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=339">x64dbg Plugin<span class="xg1 num">58</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=134">IDA Plugin<span class="xg1 num">134</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=241">Mac OSX<span class="xg1 num">15</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer<span class="xg1 num">52</span></a></li>
+<li><a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=typeid&amp;typeid=130">Other<span class="xg1 num">887</span></a></li>
+</ul>
+
+<div id="threadlist" class="tl bm bmw">
+<div class="th">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<th colspan="2">
+<div class="tf">
+<span id="atarget" onclick="setatarget(-1)" class="y atarget_1" title="在新窗口中打开帖子">新窗</span>
+<a id="filter_special" href="javascript:;" class="showmenu xi2" onclick="showMenu(this.id)">全部主题</a>&nbsp;						
+<a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=lastpost&amp;orderby=lastpost" class="xi2">最新</a>&nbsp;
+<a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=heat&amp;orderby=heats" class="xi2">热门</a>&nbsp;
+<a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=hot" class="xi2">热帖</a>&nbsp;
+<a href="forum.php?mod=forumdisplay&amp;fid=4&amp;filter=digest&amp;digest=1" class="xi2">精华</a>&nbsp;
+<a id="filter_dateline" href="javascript:;" class="showmenu xi2" onclick="showMenu(this.id)">更多</a>&nbsp;
+<span id="clearstickthread" style="display: none;">
+<span class="pipe">|</span>
+<a href="javascript:;" onclick="clearStickThread()" class="xi2" title="显示置顶">显示置顶</a>
+</span>
+</div>
+</th>
+<td class="by">作者</td>
+<td class="num">回复/查看</td>
+<td class="by">最后发表</td>
+</tr>
+</table>
+</div>
+<div class="bm_c">
+
+<div id="forumnew" style="display:none"></div>
+<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&amp;action=moderate&amp;fid=4&amp;infloat=yes&amp;nopost=yes">
+<input type="hidden" name="formhash" value="1988cdfc" />
+<input type="hidden" name="listextra" value="page%3D1" />
+<table summary="forum_4" cellspacing="0" cellpadding="0" id="threadlisttableid">
+<tbody>
+<tr>
+<td class="icn"><img src="https://static.52pojie.cn/static/image/common/ann_icon.gif" alt="公告" /></td>
+<th><strong class="xst">公告: <a href="https://www.52pojie.cn/thread-972681-1-1.html" target="_blank"><b><font color="#FF0000">论坛禁止发布任何可能存在商业侵权内容，包括但不限于影视资源、原创或者转载商业软件的破解成品、破解补丁、注册机等。</font></b></a></strong></th>
+<td class="by">
+<cite><a href="home.php?mod=space&amp;uid=1" c="1">Hmily</a></cite>
+<em>2019-6-10</em>
+</td>
+<td class="num">&nbsp;</td>
+<td class="by">&nbsp;</td>
+</tr>
+</tbody>
+<tbody id="stickthread_1737161">
+<tr>
+<td class="icn">
+<a href="thread-1737161-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_1737161" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1737161';CONTENT_ID='stickthread_1737161';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('1737161')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-1737161-1-1.html" style="font-weight: bold;color: #2B65B7;" onclick="atarget(this)" class="s xst">【权威发布】吾爱破解论坛2022年原创区、悬赏值TOP榜（下）</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2023-1-17 17:34</p><span class="tps">&nbsp;...<a href="thread-1737161-2-1.html" onclick="atarget(this)">2</a><a href="thread-1737161-3-1.html" onclick="atarget(this)">3</a><a href="thread-1737161-4-1.html" onclick="atarget(this)">4</a><a href="thread-1737161-5-1.html" onclick="atarget(this)">5</a><a href="thread-1737161-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1737161-73-1.html" onclick="atarget(this)">73</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2023-1-17 17:34</span></em>
+</td>
+<td class="num"><a href="thread-1737161-1-1.html" class="xi2">724</a><em>45277</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Gx236" c="1">Gx236</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1737161&goto=lastpost#lastpost">2023-12-18 18:12</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_1854492">
+<tr>
+<td class="icn">
+<a href="thread-1854492-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_1854492" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1854492';CONTENT_ID='stickthread_1854492';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('1854492')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-1854492-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">关于《安卓逆向这档事》被盗卖嘎了10w韭菜这档事</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1109458">正己</a><span class="pipe">&bull;</span>2023-11-9 09:49</p><span class="tps">&nbsp;...<a href="thread-1854492-2-1.html" onclick="atarget(this)">2</a><a href="thread-1854492-3-1.html" onclick="atarget(this)">3</a><a href="thread-1854492-4-1.html" onclick="atarget(this)">4</a><a href="thread-1854492-5-1.html" onclick="atarget(this)">5</a><a href="thread-1854492-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1854492-83-1.html" onclick="atarget(this)">83</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1109458" c="1" style="color: #0000FF;">正己</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=3" target="_blank"><img src="https://attach.52pojie.cn/common/ec/common_3_verify_icon.png" class="vm" alt="吾是土豪" title="吾是土豪" /></a></cite>
+<em><span>2023-11-9 09:49</span></em>
+</td>
+<td class="num"><a href="thread-1854492-1-1.html" class="xi2">829</a><em>21662</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=feiyuefei" c="1">feiyuefei</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1854492&goto=lastpost#lastpost">2023-12-18 12:24</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_1757007">
+<tr>
+<td class="icn">
+<a href="thread-1757007-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_1757007" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1757007';CONTENT_ID='stickthread_1757007';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('1757007')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-1757007-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">吾爱破解精华集 2022</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=368698">烟99</a><span class="pipe">&bull;</span>2023-3-11 14:35</p><span class="tps">&nbsp;...<a href="thread-1757007-2-1.html" onclick="atarget(this)">2</a><a href="thread-1757007-3-1.html" onclick="atarget(this)">3</a><a href="thread-1757007-4-1.html" onclick="atarget(this)">4</a><a href="thread-1757007-5-1.html" onclick="atarget(this)">5</a><a href="thread-1757007-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1757007-264-1.html" onclick="atarget(this)">264</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=368698" c="1" style="color: #0000FF;">烟99</a></cite>
+<em><span>2023-3-11 14:35</span></em>
+</td>
+<td class="num"><a href="thread-1757007-1-1.html" class="xi2">2632</a><em>83012</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=yj89660054" c="1">yj89660054</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1757007&goto=lastpost#lastpost">2023-12-18 07:51</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_1736053">
+<tr>
+<td class="icn">
+<a href="thread-1736053-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_1736053" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1736053';CONTENT_ID='stickthread_1736053';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('1736053')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-1736053-1-1.html" style="font-weight: bold;color: #2B65B7;" onclick="atarget(this)" class="s xst">【权威发布】吾爱破解论坛2022年优秀、精华TOP榜（上）</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2023-1-13 16:22</p><span class="tps">&nbsp;...<a href="thread-1736053-2-1.html" onclick="atarget(this)">2</a><a href="thread-1736053-3-1.html" onclick="atarget(this)">3</a><a href="thread-1736053-4-1.html" onclick="atarget(this)">4</a><a href="thread-1736053-5-1.html" onclick="atarget(this)">5</a><a href="thread-1736053-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1736053-135-1.html" onclick="atarget(this)">135</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2023-1-13 16:22</span></em>
+</td>
+<td class="num"><a href="thread-1736053-1-1.html" class="xi2">1344</a><em>72672</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=lc01t1watz9" c="1">lc01t1watz9</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1736053&goto=lastpost#lastpost">2023-12-17 21:34</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_811805">
+<tr>
+<td class="icn">
+<a href="thread-811805-1-1.html" title="全局置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_811805" class="showcontent y" title="更多操作" onclick="CONTENT_TID='811805';CONTENT_ID='stickthread_811805';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('811805')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-811805-1-1.html" style="font-weight: bold;color: #3C9D40;" onclick="atarget(this)" class="s xst">【爱盘】3.0 在线破解工具包正式发布！</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2018-10-24 17:48</p><span class="tps">&nbsp;...<a href="thread-811805-2-1.html" onclick="atarget(this)">2</a><a href="thread-811805-3-1.html" onclick="atarget(this)">3</a><a href="thread-811805-4-1.html" onclick="atarget(this)">4</a><a href="thread-811805-5-1.html" onclick="atarget(this)">5</a><a href="thread-811805-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-811805-724-1.html" onclick="atarget(this)">724</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2018-10-24 17:48</span></em>
+</td>
+<td class="num"><a href="thread-811805-1-1.html" class="xi2">7236</a><em>1088843</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=wwowwyu" c="1">wwowwyu</a></cite>
+<em><a href="forum.php?mod=redirect&tid=811805&goto=lastpost#lastpost">2021-10-23 17:16</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_972681">
+<tr>
+<td class="icn">
+<a href="thread-972681-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_972681" class="showcontent y" title="更多操作" onclick="CONTENT_TID='972681';CONTENT_ID='stickthread_972681';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('972681')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-972681-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">【公告】吾爱归来----尊重知识产权，加强版权保护</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=14">LCG</a><span class="pipe">&bull;</span>2019-6-10 17:17</p><span class="tps">&nbsp;...<a href="thread-972681-2-1.html" onclick="atarget(this)">2</a><a href="thread-972681-3-1.html" onclick="atarget(this)">3</a><a href="thread-972681-4-1.html" onclick="atarget(this)">4</a><a href="thread-972681-5-1.html" onclick="atarget(this)">5</a><a href="thread-972681-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-972681-558-1.html" onclick="atarget(this)">558</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=14" c="1" style="color: #3c9d40;">LCG</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=1" target="_blank"><img src="https://attach.52pojie.cn/common/c4/common_1_verify_icon.png" class="vm" alt="吾是女生" title="吾是女生" /></a><a href="home.php?mod=spacecp&ac=profile&op=verify&vid=3" target="_blank"><img src="https://attach.52pojie.cn/common/ec/common_3_verify_icon.png" class="vm" alt="吾是土豪" title="吾是土豪" /></a></cite>
+<em><span>2019-6-10 17:17</span></em>
+</td>
+<td class="num"><a href="thread-972681-1-1.html" class="xi2">5604</a><em>722671</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=XyJoe7" c="1">XyJoe7</a></cite>
+<em><a href="forum.php?mod=redirect&tid=972681&goto=lastpost#lastpost">2020-6-4 10:59</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_349073">
+<tr>
+<td class="icn">
+<a href="thread-349073-1-1.html" title="全局置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_3.gif" alt="全局置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_349073" class="showcontent y" title="更多操作" onclick="CONTENT_TID='349073';CONTENT_ID='stickthread_349073';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('349073')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-349073-1-1.html" style="font-weight: bold;color: #2B65B7;" onclick="atarget(this)" class="s xst">吾爱破解论坛官方入门教学培训第一期开始啦！【已更新到第十课】</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2015-4-7 15:32</p><span class="tps">&nbsp;...<a href="thread-349073-2-1.html" onclick="atarget(this)">2</a><a href="thread-349073-3-1.html" onclick="atarget(this)">3</a><a href="thread-349073-4-1.html" onclick="atarget(this)">4</a><a href="thread-349073-5-1.html" onclick="atarget(this)">5</a><a href="thread-349073-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-349073-860-1.html" onclick="atarget(this)">860</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2015-4-7 15:32</span></em>
+</td>
+<td class="num"><a href="thread-349073-1-1.html" class="xi2">8613</a><em>3924152</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=yuanmengxiaozi" c="1">yuanmengxiaozi</a></cite>
+<em><a href="forum.php?mod=redirect&tid=349073&goto=lastpost#lastpost">2017-11-3 09:18</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_143136">
+<tr>
+<td class="icn">
+<a href="thread-143136-1-1.html" title="全局置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_143136" class="showcontent y" title="更多操作" onclick="CONTENT_TID='143136';CONTENT_ID='stickthread_143136';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('143136')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-143136-1-1.html" style="font-weight: bold;" onclick="atarget(this)" class="s xst">吾爱破解论坛总版规【20210428_New】</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=118632">皈依我佛</a><span class="pipe">&bull;</span>2012-4-11 23:43</p></th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=118632" c="1">皈依我佛</a></cite>
+<em><span>2012-4-11 23:43</span></em>
+</td>
+<td class="num"><a href="thread-143136-1-1.html" class="xi2">3</a><em>3470794</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%F0%A7%D2%C0%CE%D2%B7%F0" c="1">皈依我佛</a></cite>
+<em><a href="forum.php?mod=redirect&tid=143136&goto=lastpost#lastpost">2015-7-3 19:56</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_225418">
+<tr>
+<td class="icn">
+<a href="thread-225418-1-1.html" title="全局置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_225418" class="showcontent y" title="更多操作" onclick="CONTENT_TID='225418';CONTENT_ID='stickthread_225418';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('225418')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-225418-1-1.html" style="font-weight: bold;color: #2B65B7;" onclick="atarget(this)" class="s xst">【吾爱福利】作为一名CracKer，你需要一张属于自己的吾爱破解壁纸！</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2013-11-27 12:15</p><span class="tps">&nbsp;...<a href="thread-225418-2-1.html" onclick="atarget(this)">2</a><a href="thread-225418-3-1.html" onclick="atarget(this)">3</a><a href="thread-225418-4-1.html" onclick="atarget(this)">4</a><a href="thread-225418-5-1.html" onclick="atarget(this)">5</a><a href="thread-225418-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-225418-58-1.html" onclick="atarget(this)">58</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2013-11-27 12:15</span></em>
+</td>
+<td class="num"><a href="thread-225418-1-1.html" class="xi2">583</a><em>1790255</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=weiwxsir" c="1">weiwxsir</a></cite>
+<em><a href="forum.php?mod=redirect&tid=225418&goto=lastpost#lastpost">2014-2-26 16:37</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_98585">
+<tr>
+<td class="icn">
+<a href="thread-98585-1-1.html" title="全局置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_98585" class="showcontent y" title="更多操作" onclick="CONTENT_TID='98585';CONTENT_ID='stickthread_98585';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('98585')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-98585-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">验证码异常问题、等待验证会员问题、邮件激活问题、冻结用户问题【2023年7月21日】</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2011-7-9 21:31</p></th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2011-7-9 21:31</span></em>
+</td>
+<td class="num"><a href="thread-98585-1-1.html" class="xi2">8</a><em>4222793</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Hmily" c="1">Hmily</a></cite>
+<em><a href="forum.php?mod=redirect&tid=98585&goto=lastpost#lastpost">2012-11-3 16:28</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_408645">
+<tr>
+<td class="icn">
+<a href="thread-408645-1-1.html" title="分类置顶主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/pin_2.gif" alt="分类置顶" />
+</a>
+</td>
+<th class="common">
+<a href="javascript:;" id="content_408645" class="showcontent y" title="更多操作" onclick="CONTENT_TID='408645';CONTENT_ID='stickthread_408645';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('408645')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-408645-1-1.html" style="font-weight: bold;color: #EE1B2E;background-color: transpar;" onclick="atarget(this)" class="s xst">吾爱破解安卓逆向0基础入门教程--导航帖（2023-10）</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=320888">qtfreet00</a><span class="pipe">&bull;</span>2015-9-2 23:02</p><span class="tps">&nbsp;...<a href="thread-408645-2-1.html" onclick="atarget(this)">2</a><a href="thread-408645-3-1.html" onclick="atarget(this)">3</a><a href="thread-408645-4-1.html" onclick="atarget(this)">4</a><a href="thread-408645-5-1.html" onclick="atarget(this)">5</a><a href="thread-408645-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-408645-38-1.html" onclick="atarget(this)">38</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=320888" c="1" style="color: #0000FF;">qtfreet00</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a><a href="home.php?mod=spacecp&ac=profile&op=verify&vid=4" target="_blank"><img src="https://attach.52pojie.cn/common/a8/common_4_verify_icon.png" class="vm" alt="原创精英" title="原创精英" /></a></cite>
+<em><span>2015-9-2 23:02</span></em>
+</td>
+<td class="num"><a href="thread-408645-1-1.html" class="xi2">378</a><em>328633</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%D2%B2%D4%F8%D3%D0%B9%FD%C3%CE%CF%EB" c="1">也曾有过梦想</a></cite>
+<em><a href="forum.php?mod=redirect&tid=408645&goto=lastpost#lastpost">2018-8-30 22:00</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_582852">
+<tr>
+<td class="icn">
+<a href="thread-582852-1-1.html" title="分类置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_582852" class="showcontent y" title="更多操作" onclick="CONTENT_TID='582852';CONTENT_ID='stickthread_582852';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('582852')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+ <a href="thread-582852-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">零基础新手破解学习导航帖</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=193643">Sound</a><span class="pipe">&bull;</span>2017-2-24 15:01</p></th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=193643" c="1" style="color: #0000FF;">Sound</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2017-2-24 15:01</span></em>
+</td>
+<td class="num"><a href="thread-582852-1-1.html" class="xi2">0</a><em>713151</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Sound" c="1">Sound</a></cite>
+<em><a href="forum.php?mod=redirect&tid=582852&goto=lastpost#lastpost">2017-2-24 15:01</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_661779">
+<tr>
+<td class="icn">
+<a href="thread-661779-1-1.html" title="本版置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_661779" class="showcontent y" title="更多操作" onclick="CONTENT_TID='661779';CONTENT_ID='stickthread_661779';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('661779')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-661779-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">吾爱破解论坛【破解专用虚拟机2.0】盛大发布，和中毒还有格盘说NO！</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=111622">Poner</a><span class="pipe">&bull;</span>2017-11-13 11:35</p><span class="tps">&nbsp;...<a href="thread-661779-2-1.html" onclick="atarget(this)">2</a><a href="thread-661779-3-1.html" onclick="atarget(this)">3</a><a href="thread-661779-4-1.html" onclick="atarget(this)">4</a><a href="thread-661779-5-1.html" onclick="atarget(this)">5</a><a href="thread-661779-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-661779-277-1.html" onclick="atarget(this)">277</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=111622" c="1" style="color: #0000FF;">Poner</a></cite>
+<em><span>2017-11-13 11:35</span></em>
+</td>
+<td class="num"><a href="thread-661779-1-1.html" class="xi2">2771</a><em>556622</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Zaki_ing" c="1">Zaki_ing</a></cite>
+<em><a href="forum.php?mod=redirect&tid=661779&goto=lastpost#lastpost">2020-11-12 00:07</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="stickthread_350397">
+<tr>
+<td class="icn">
+<a href="thread-350397-1-1.html" title="本版置顶主题 - 关闭的主题 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_lock.gif" />
+</a>
+</td>
+<th class="lock">
+<a href="javascript:;" id="content_350397" class="showcontent y" title="更多操作" onclick="CONTENT_TID='350397';CONTENT_ID='stickthread_350397';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<a href="javascript:void(0);" onclick="hideStickThread('350397')" class="closeprev y" title="隐藏置顶帖">隐藏置顶帖</a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=122">Debuggers</a>]</em> <a href="thread-350397-1-1.html" style="font-weight: bold;color: #EE1B2E;" onclick="atarget(this)" class="s xst">七周年礼物第五弹之一：吾爱破解专用版Ollydbg【2016年1月21日更新】</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<p class="res-ti"><a href="home.php?mod=space&uid=2244">小生我怕怕</a><span class="pipe">&bull;</span>2015-4-10 19:29</p><span class="tps">&nbsp;...<a href="thread-350397-2-1.html" onclick="atarget(this)">2</a><a href="thread-350397-3-1.html" onclick="atarget(this)">3</a><a href="thread-350397-4-1.html" onclick="atarget(this)">4</a><a href="thread-350397-5-1.html" onclick="atarget(this)">5</a><a href="thread-350397-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-350397-355-1.html" onclick="atarget(this)">355</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=2244" c="1">小生我怕怕</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2015-4-10 19:29</span></em>
+</td>
+<td class="num"><a href="thread-350397-1-1.html" class="xi2">3565</a><em>1542301</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=PaulWest" c="1">PaulWest</a></cite>
+<em><a href="forum.php?mod=redirect&tid=350397&goto=lastpost#lastpost">2018-4-9 14:32</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="separatorline">
+<tr class="ts">
+<td>&nbsp;</td>
+<th><a href="javascript:;" onclick="checkForumnew_btn('4')" title="查看更新" class="forumrefresh">版块主题</a></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+</tbody>
+
+<tbody id="normalthread_1870460">
+<tr>
+<td class="icn">
+<a href="thread-1870460-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1870460" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1870460';CONTENT_ID='normalthread_1870460';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=134">IDA Plugin</a>]</em> <a href="thread-1870460-1-1.html" onclick="atarget(this)" class="s xst">IDA 8.3 Lumen 私服插件</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=10468">风吹屁屁凉</a><span class="pipe">&bull;</span>2023-12-18 16:25</p><a href="forum.php?mod=redirect&amp;tid=1870460&amp;goto=lastpost#lastpost" class="xi1">New</a>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=10468" c="1">风吹屁屁凉</a></cite>
+<em><span class="xi1">2023-12-18 16:25</span></em>
+</td>
+<td class="num"><a href="thread-1870460-1-1.html" class="xi2">3</a><em>461</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%CE%ED%B6%BC%B9%C2%B6%FB" c="1">雾都孤尔</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1870460&goto=lastpost#lastpost">2023-12-18 18:22</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1531324">
+<tr>
+<td class="icn">
+<a href="thread-1531324-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1531324" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1531324';CONTENT_ID='normalthread_1531324';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=131">Unpackers</a>]</em> <a href="thread-1531324-1-1.html" onclick="atarget(this)" class="s xst">lua逆向神器_unluac_2023_11_15.jar</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+ - [阅读权限 <span class="xw1">10</span>]<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=717039">gcode</a><span class="pipe">&bull;</span>2021-10-21 13:19</p><span class="tps">&nbsp;...<a href="thread-1531324-2-1.html" onclick="atarget(this)">2</a><a href="thread-1531324-3-1.html" onclick="atarget(this)">3</a><a href="thread-1531324-4-1.html" onclick="atarget(this)">4</a><a href="thread-1531324-5-1.html" onclick="atarget(this)">5</a><a href="thread-1531324-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1531324-7-1.html" onclick="atarget(this)">7</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=717039" c="1">gcode</a></cite>
+<em><span>2021-10-21 13:19</span></em>
+</td>
+<td class="num"><a href="thread-1531324-1-1.html" class="xi2">66</a><em>6062</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=gcode" c="1">gcode</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1531324&goto=lastpost#lastpost">2023-12-18 18:12</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1861384">
+<tr>
+<td class="icn">
+<a href="thread-1861384-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1861384" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1861384';CONTENT_ID='normalthread_1861384';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=123">Disassemblers</a>]</em> <a href="thread-1861384-1-1.html" onclick="atarget(this)" class="s xst">转IDA Pro 8.3 (x86, x86_64)</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 17" />
+<img src="https://static.52pojie.cn/static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 552" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1835858">Kenny0521</a><span class="pipe">&bull;</span>2023-11-25 10:49</p><span class="tps">&nbsp;...<a href="thread-1861384-2-1.html" onclick="atarget(this)">2</a><a href="thread-1861384-3-1.html" onclick="atarget(this)">3</a><a href="thread-1861384-4-1.html" onclick="atarget(this)">4</a><a href="thread-1861384-5-1.html" onclick="atarget(this)">5</a><a href="thread-1861384-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1861384-32-1.html" onclick="atarget(this)">32</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1835858" c="1">Kenny0521</a></cite>
+<em><span>2023-11-25 10:49</span></em>
+</td>
+<td class="num"><a href="thread-1861384-1-1.html" class="xi2">313</a><em>16131</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=flyingdancex" c="1">flyingdancex</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1861384&goto=lastpost#lastpost">2023-12-18 17:16</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1718344">
+<tr>
+<td class="icn">
+<a href="thread-1718344-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1718344" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1718344';CONTENT_ID='normalthread_1718344';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1718344-1-1.html" onclick="atarget(this)" class="s xst">【2023.12.18更新】Inno解包工具-InnoExtractor_7.0.1.509 汉化优化单文件版</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 3" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=664564">wszjf</a><span class="pipe">&bull;</span>2022-11-25 09:59</p><span class="tps">&nbsp;...<a href="thread-1718344-2-1.html" onclick="atarget(this)">2</a><a href="thread-1718344-3-1.html" onclick="atarget(this)">3</a><a href="thread-1718344-4-1.html" onclick="atarget(this)">4</a><a href="thread-1718344-5-1.html" onclick="atarget(this)">5</a><a href="thread-1718344-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1718344-11-1.html" onclick="atarget(this)">11</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=664564" c="1">wszjf</a></cite>
+<em><span>2022-11-25 09:59</span></em>
+</td>
+<td class="num"><a href="thread-1718344-1-1.html" class="xi2">109</a><em>7375</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=CQGaxm" c="1">CQGaxm</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1718344&goto=lastpost#lastpost">2023-12-18 17:05</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1434932">
+<tr>
+<td class="icn">
+<a href="thread-1434932-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1434932" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1434932';CONTENT_ID='normalthread_1434932';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=134">IDA Plugin</a>]</em> <a href="thread-1434932-1-1.html" style="color: #3C9D40;" onclick="atarget(this)" class="s xst">IDA Pro 的一个小插件StrongCC(IDA Strong Charset Code)</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=67558">微笑一刀</a><span class="pipe">&bull;</span>2021-5-7 14:07</p><span class="tps">&nbsp;...<a href="thread-1434932-2-1.html" onclick="atarget(this)">2</a><a href="thread-1434932-3-1.html" onclick="atarget(this)">3</a><a href="thread-1434932-4-1.html" onclick="atarget(this)">4</a><a href="thread-1434932-5-1.html" onclick="atarget(this)">5</a><a href="thread-1434932-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1434932-7-1.html" onclick="atarget(this)">7</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=67558" c="1">微笑一刀</a></cite>
+<em><span>2021-5-7 14:07</span></em>
+</td>
+<td class="num"><a href="thread-1434932-1-1.html" class="xi2">64</a><em>10461</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%D1%CC%B2%DDa" c="1">烟草a</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1434932&goto=lastpost#lastpost">2023-12-18 15:49</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1798325">
+<tr>
+<td class="icn">
+<a href="thread-1798325-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1798325" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1798325';CONTENT_ID='normalthread_1798325';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=134">IDA Plugin</a>]</em> <a href="thread-1798325-1-1.html" onclick="atarget(this)" class="s xst">【原创】IDA插件-显示用户注释</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=2092447">JayRE</a><span class="pipe">&bull;</span>2023-6-16 18:53</p><span class="tps">&nbsp;...<a href="thread-1798325-2-1.html" onclick="atarget(this)">2</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=2092447" c="1">JayRE</a></cite>
+<em><span>2023-6-16 18:53</span></em>
+</td>
+<td class="num"><a href="thread-1798325-1-1.html" class="xi2">16</a><em>2646</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%D1%CC%B2%DDa" c="1">烟草a</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1798325&goto=lastpost#lastpost">2023-12-18 15:41</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1411747">
+<tr>
+<td class="icn">
+<a href="thread-1411747-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1411747" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1411747';CONTENT_ID='normalthread_1411747';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=230">Android Tools</a>]</em> <a href="thread-1411747-1-1.html" onclick="atarget(this)" class="s xst">APK Easy Tool_v1.59.2 --Windows下使用的安卓逆向工具</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 22" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 604" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1630872">djxding</a><span class="pipe">&bull;</span>2021-4-7 11:04</p><span class="tps">&nbsp;...<a href="thread-1411747-2-1.html" onclick="atarget(this)">2</a><a href="thread-1411747-3-1.html" onclick="atarget(this)">3</a><a href="thread-1411747-4-1.html" onclick="atarget(this)">4</a><a href="thread-1411747-5-1.html" onclick="atarget(this)">5</a><a href="thread-1411747-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1411747-26-1.html" onclick="atarget(this)">26</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1630872" c="1">djxding</a></cite>
+<em><span>2021-4-7 11:04</span></em>
+</td>
+<td class="num"><a href="thread-1411747-1-1.html" class="xi2">253</a><em>20774</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=lujianfei" c="1">lujianfei</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1411747&goto=lastpost#lastpost">2023-12-18 14:39</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1861590">
+<tr>
+<td class="icn">
+<a href="thread-1861590-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1861590" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1861590';CONTENT_ID='normalthread_1861590';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=123">Disassemblers</a>]</em> <a href="thread-1861590-1-1.html" onclick="atarget(this)" class="s xst">IDA Pro 8.3 整合版</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 11" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 328" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=653608">QiuChenly</a><span class="pipe">&bull;</span>2023-11-25 13:16</p><span class="tps">&nbsp;...<a href="thread-1861590-2-1.html" onclick="atarget(this)">2</a><a href="thread-1861590-3-1.html" onclick="atarget(this)">3</a><a href="thread-1861590-4-1.html" onclick="atarget(this)">4</a><a href="thread-1861590-5-1.html" onclick="atarget(this)">5</a><a href="thread-1861590-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1861590-18-1.html" onclick="atarget(this)">18</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=653608" c="1">QiuChenly</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2023-11-25 13:16</span></em>
+</td>
+<td class="num"><a href="thread-1861590-1-1.html" class="xi2">177</a><em>12675</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=qwert3166" c="1">qwert3166</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1861590&goto=lastpost#lastpost">2023-12-18 13:36</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1428765">
+<tr>
+<td class="icn">
+<a href="thread-1428765-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1428765" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1428765';CONTENT_ID='normalthread_1428765';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1428765-1-1.html" onclick="atarget(this)" class="s xst">Wireshark 3.4.5 [抓包工具最新中文版]</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 28" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 991" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1619150">pentium315</a><span class="pipe">&bull;</span>2021-4-27 20:16</p><span class="tps">&nbsp;...<a href="thread-1428765-2-1.html" onclick="atarget(this)">2</a><a href="thread-1428765-3-1.html" onclick="atarget(this)">3</a><a href="thread-1428765-4-1.html" onclick="atarget(this)">4</a><a href="thread-1428765-5-1.html" onclick="atarget(this)">5</a><a href="thread-1428765-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1428765-44-1.html" onclick="atarget(this)">44</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1619150" c="1">pentium315</a></cite>
+<em><span>2021-4-27 20:16</span></em>
+</td>
+<td class="num"><a href="thread-1428765-1-1.html" class="xi2">434</a><em>28701</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=qingfengxulaia" c="1">qingfengxulaia</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1428765&goto=lastpost#lastpost">2023-12-18 12:39</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1623008">
+<tr>
+<td class="icn">
+<a href="thread-1623008-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1623008" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1623008';CONTENT_ID='normalthread_1623008';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1623008-1-1.html" onclick="atarget(this)" class="s xst">网络抓包工具Wireshark支持多系统中文界面</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 9" />
+<img src="https://static.52pojie.cn/static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 451" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=756528">txq0211</a><span class="pipe">&bull;</span>2022-4-16 21:00</p><span class="tps">&nbsp;...<a href="thread-1623008-2-1.html" onclick="atarget(this)">2</a><a href="thread-1623008-3-1.html" onclick="atarget(this)">3</a><a href="thread-1623008-4-1.html" onclick="atarget(this)">4</a><a href="thread-1623008-5-1.html" onclick="atarget(this)">5</a><a href="thread-1623008-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1623008-19-1.html" onclick="atarget(this)">19</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=756528" c="1">txq0211</a></cite>
+<em><span>2022-4-16 21:00</span></em>
+</td>
+<td class="num"><a href="thread-1623008-1-1.html" class="xi2">187</a><em>22180</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=qingfengxulaia" c="1">qingfengxulaia</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1623008&goto=lastpost#lastpost">2023-12-18 12:38</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1584115">
+<tr>
+<td class="icn">
+<a href="thread-1584115-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1584115" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1584115';CONTENT_ID='normalthread_1584115';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=123">Disassemblers</a>]</em> <a href="thread-1584115-1-1.html" onclick="atarget(this)" class="s xst">IDA Pro 7.7.220118 (SP1) 全插件绿色版</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 39" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 645" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=474378">raimis</a><span class="pipe">&bull;</span>2022-2-7 14:00</p><span class="tps">&nbsp;...<a href="thread-1584115-2-1.html" onclick="atarget(this)">2</a><a href="thread-1584115-3-1.html" onclick="atarget(this)">3</a><a href="thread-1584115-4-1.html" onclick="atarget(this)">4</a><a href="thread-1584115-5-1.html" onclick="atarget(this)">5</a><a href="thread-1584115-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1584115-29-1.html" onclick="atarget(this)">29</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=474378" c="1">raimis</a></cite>
+<em><span>2022-2-7 14:00</span></em>
+</td>
+<td class="num"><a href="thread-1584115-1-1.html" class="xi2">288</a><em>33736</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=qingfengxulaia" c="1">qingfengxulaia</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1584115&goto=lastpost#lastpost">2023-12-18 12:36</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1595502">
+<tr>
+<td class="icn">
+<a href="thread-1595502-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1595502" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1595502';CONTENT_ID='normalthread_1595502';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=128">.NET</a>]</em> <a href="thread-1595502-1-1.html" onclick="atarget(this)" class="s xst">de4dot-All-Version de4dot多版本合集 含多合一拖拽gui工具箱</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1015794">superkou</a><span class="pipe">&bull;</span>2022-3-1 16:16</p><span class="tps">&nbsp;...<a href="thread-1595502-2-1.html" onclick="atarget(this)">2</a><a href="thread-1595502-3-1.html" onclick="atarget(this)">3</a><a href="thread-1595502-4-1.html" onclick="atarget(this)">4</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1015794" c="1">superkou</a></cite>
+<em><span>2022-3-1 16:16</span></em>
+</td>
+<td class="num"><a href="thread-1595502-1-1.html" class="xi2">35</a><em>12147</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%CF%BA%B3%B6%B5%B0" c="1">虾扯蛋</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1595502&goto=lastpost#lastpost">2023-12-18 10:41</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1812743">
+<tr>
+<td class="icn">
+<a href="thread-1812743-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1812743" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1812743';CONTENT_ID='normalthread_1812743';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1812743-1-1.html" onclick="atarget(this)" class="s xst">H5GG【IOS】砸壳IPA文件</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=2099483">qqbaipiao</a><span class="pipe">&bull;</span>2023-7-25 09:28</p><span class="tps">&nbsp;...<a href="thread-1812743-2-1.html" onclick="atarget(this)">2</a><a href="thread-1812743-3-1.html" onclick="atarget(this)">3</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=2099483" c="1">qqbaipiao</a></cite>
+<em><span>2023-7-25 09:28</span></em>
+</td>
+<td class="num"><a href="thread-1812743-1-1.html" class="xi2">25</a><em>3487</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=baby163145" c="1">baby163145</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1812743&goto=lastpost#lastpost">2023-12-18 10:14</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1804571">
+<tr>
+<td class="icn">
+<a href="thread-1804571-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1804571" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1804571';CONTENT_ID='normalthread_1804571';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1804571-1-1.html" onclick="atarget(this)" class="s xst">VMware Workstation虚拟机合集+激活密钥_Win+Linux_10∕11∕12∕14∕15∕16∕17</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_2.gif" align="absmiddle" alt="recommend" title="评价指数 107" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 2022" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=419382">birdlily</a><span class="pipe">&bull;</span>2023-7-4 12:17</p><span class="tps">&nbsp;...<a href="thread-1804571-2-1.html" onclick="atarget(this)">2</a><a href="thread-1804571-3-1.html" onclick="atarget(this)">3</a><a href="thread-1804571-4-1.html" onclick="atarget(this)">4</a><a href="thread-1804571-5-1.html" onclick="atarget(this)">5</a><a href="thread-1804571-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1804571-63-1.html" onclick="atarget(this)">63</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=419382" c="1">birdlily</a></cite>
+<em><span>2023-7-4 12:17</span></em>
+</td>
+<td class="num"><a href="thread-1804571-1-1.html" class="xi2">624</a><em>30754</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=chenlinpsp" c="1">chenlinpsp</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1804571&goto=lastpost#lastpost">2023-12-18 09:50</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1350618">
+<tr>
+<td class="icn">
+<a href="thread-1350618-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1350618" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1350618';CONTENT_ID='normalthread_1350618';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1350618-1-1.html" onclick="atarget(this)" class="s xst">抓包工具Charles v4.6.3，附老版中文补丁</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 18" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 734" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1022159">bluemood4</a><span class="pipe">&bull;</span>2021-1-14 10:50</p><span class="tps">&nbsp;...<a href="thread-1350618-2-1.html" onclick="atarget(this)">2</a><a href="thread-1350618-3-1.html" onclick="atarget(this)">3</a><a href="thread-1350618-4-1.html" onclick="atarget(this)">4</a><a href="thread-1350618-5-1.html" onclick="atarget(this)">5</a><a href="thread-1350618-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1350618-33-1.html" onclick="atarget(this)">33</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1022159" c="1">bluemood4</a></cite>
+<em><span>2021-1-14 10:50</span></em>
+</td>
+<td class="num"><a href="thread-1350618-1-1.html" class="xi2">325</a><em>37945</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=hanck521" c="1">hanck521</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1350618&goto=lastpost#lastpost">2023-12-18 09:03</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1868306">
+<tr>
+<td class="icn">
+<a href="thread-1868306-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1868306" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1868306';CONTENT_ID='normalthread_1868306';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1868306-1-1.html" onclick="atarget(this)" class="s xst">【隐私虚拟机】Windows 10 Privacy Version + 独家秘籍</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 22" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 704" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=243467">风之暇想</a><span class="pipe">&bull;</span>2023-12-12 19:36</p><span class="tps">&nbsp;...<a href="thread-1868306-2-1.html" onclick="atarget(this)">2</a><a href="thread-1868306-3-1.html" onclick="atarget(this)">3</a><a href="thread-1868306-4-1.html" onclick="atarget(this)">4</a><a href="thread-1868306-5-1.html" onclick="atarget(this)">5</a><a href="thread-1868306-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1868306-38-1.html" onclick="atarget(this)">38</a></span>
+<a href="forum.php?mod=redirect&amp;tid=1868306&amp;goto=lastpost#lastpost" class="xi1">New</a>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=243467" c="1" style="color: #0000FF;">风之暇想</a></cite>
+<em><span>2023-12-12 19:36</span></em>
+</td>
+<td class="num"><a href="thread-1868306-1-1.html" class="xi2">376</a><em>13451</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=gu664171095" c="1">gu664171095</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1868306&goto=lastpost#lastpost">2023-12-17 22:05</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1837928">
+<tr>
+<td class="icn">
+<a href="thread-1837928-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1837928" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1837928';CONTENT_ID='normalthread_1837928';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=124">PEtools</a>]</em> <a href="thread-1837928-1-1.html" onclick="atarget(this)" class="s xst">查壳工具 Exeinfo PE 0.0.8.1 集成插件单文件汉化版</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 5" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 267" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1443407">映梓</a><span class="pipe">&bull;</span>2023-9-24 20:21</p><span class="tps">&nbsp;...<a href="thread-1837928-2-1.html" onclick="atarget(this)">2</a><a href="thread-1837928-3-1.html" onclick="atarget(this)">3</a><a href="thread-1837928-4-1.html" onclick="atarget(this)">4</a><a href="thread-1837928-5-1.html" onclick="atarget(this)">5</a><a href="thread-1837928-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1837928-14-1.html" onclick="atarget(this)">14</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1443407" c="1">映梓</a></cite>
+<em><span>2023-9-24 20:21</span></em>
+</td>
+<td class="num"><a href="thread-1837928-1-1.html" class="xi2">132</a><em>7083</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Leidus" c="1">Leidus</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1837928&goto=lastpost#lastpost">2023-12-17 17:46</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1818026">
+<tr>
+<td class="icn">
+<a href="thread-1818026-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1818026" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1818026';CONTENT_ID='normalthread_1818026';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=124">PEtools</a>]</em> <a href="thread-1818026-1-1.html" onclick="atarget(this)" class="s xst">Exeinfo PE v0.0.8.0</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 3" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 207" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1016308">FleTime</a><span class="pipe">&bull;</span>2023-8-7 00:10</p><span class="tps">&nbsp;...<a href="thread-1818026-2-1.html" onclick="atarget(this)">2</a><a href="thread-1818026-3-1.html" onclick="atarget(this)">3</a><a href="thread-1818026-4-1.html" onclick="atarget(this)">4</a><a href="thread-1818026-5-1.html" onclick="atarget(this)">5</a><a href="thread-1818026-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1818026-11-1.html" onclick="atarget(this)">11</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1016308" c="1" style="color: #0000FF;">FleTime</a></cite>
+<em><span>2023-8-7 00:10</span></em>
+</td>
+<td class="num"><a href="thread-1818026-1-1.html" class="xi2">108</a><em>5562</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Leidus" c="1">Leidus</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1818026&goto=lastpost#lastpost">2023-12-17 17:44</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1863212">
+<tr>
+<td class="icn">
+<a href="thread-1863212-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1863212" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1863212';CONTENT_ID='normalthread_1863212';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=125">Packers</a>]</em> <a href="thread-1863212-1-1.html" onclick="atarget(this)" class="s xst">VMProtect Ultimate 3.8.5.1879</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1605342">Romeo_Ahmed</a><span class="pipe">&bull;</span>2023-11-29 14:18</p><span class="tps">&nbsp;...<a href="thread-1863212-2-1.html" onclick="atarget(this)">2</a><a href="thread-1863212-3-1.html" onclick="atarget(this)">3</a><a href="thread-1863212-4-1.html" onclick="atarget(this)">4</a><a href="thread-1863212-5-1.html" onclick="atarget(this)">5</a><a href="thread-1863212-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1863212-9-1.html" onclick="atarget(this)">9</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1605342" c="1">Romeo_Ahmed</a></cite>
+<em><span>2023-11-29 14:18</span></em>
+</td>
+<td class="num"><a href="thread-1863212-1-1.html" class="xi2">80</a><em>4854</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=fly92" c="1">fly92</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1863212&goto=lastpost#lastpost">2023-12-17 17:14</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1774093">
+<tr>
+<td class="icn">
+<a href="thread-1774093-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1774093" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1774093';CONTENT_ID='normalthread_1774093';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=131">Unpackers</a>]</em> <a href="thread-1774093-1-1.html" onclick="atarget(this)" class="s xst">【转帖】Autoit3反编译器神器 乾坤镜</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1835791">EternalBlue</a><span class="pipe">&bull;</span>2023-4-15 00:40</p><span class="tps">&nbsp;...<a href="thread-1774093-2-1.html" onclick="atarget(this)">2</a><a href="thread-1774093-3-1.html" onclick="atarget(this)">3</a><a href="thread-1774093-4-1.html" onclick="atarget(this)">4</a><a href="thread-1774093-5-1.html" onclick="atarget(this)">5</a><a href="thread-1774093-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1774093-7-1.html" onclick="atarget(this)">7</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1835791" c="1">EternalBlue</a></cite>
+<em><span>2023-4-15 00:40</span></em>
+</td>
+<td class="num"><a href="thread-1774093-1-1.html" class="xi2">61</a><em>4341</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%C1%B9%B7%E7" c="1">凉风</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1774093&goto=lastpost#lastpost">2023-12-17 16:53</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1371328">
+<tr>
+<td class="icn">
+<a href="thread-1371328-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1371328" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1371328';CONTENT_ID='normalthread_1371328';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1371328-1-1.html" onclick="atarget(this)" class="s xst">HTTP Debugger Pro v9.11</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 16" />
+<img src="https://static.52pojie.cn/static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 495" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1016308">FleTime</a><span class="pipe">&bull;</span>2021-2-16 06:19</p><span class="tps">&nbsp;...<a href="thread-1371328-2-1.html" onclick="atarget(this)">2</a><a href="thread-1371328-3-1.html" onclick="atarget(this)">3</a><a href="thread-1371328-4-1.html" onclick="atarget(this)">4</a><a href="thread-1371328-5-1.html" onclick="atarget(this)">5</a><a href="thread-1371328-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1371328-16-1.html" onclick="atarget(this)">16</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1016308" c="1" style="color: #0000FF;">FleTime</a></cite>
+<em><span>2021-2-16 06:19</span></em>
+</td>
+<td class="num"><a href="thread-1371328-1-1.html" class="xi2">150</a><em>28166</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=sixsixsix1024" c="1">sixsixsix1024</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1371328&goto=lastpost#lastpost">2023-12-17 11:56</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1391337">
+<tr>
+<td class="icn">
+<a href="thread-1391337-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1391337" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1391337';CONTENT_ID='normalthread_1391337';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=125">Packers</a>]</em> <a href="thread-1391337-1-1.html" onclick="atarget(this)" class="s xst">VMProtect 3.5.0加强版【针对易语言支持库和函数头部加强版】</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 5" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 325" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=698351">洛溪</a><span class="pipe">&bull;</span>2021-3-14 23:42</p><span class="tps">&nbsp;...<a href="thread-1391337-2-1.html" onclick="atarget(this)">2</a><a href="thread-1391337-3-1.html" onclick="atarget(this)">3</a><a href="thread-1391337-4-1.html" onclick="atarget(this)">4</a><a href="thread-1391337-5-1.html" onclick="atarget(this)">5</a><a href="thread-1391337-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1391337-15-1.html" onclick="atarget(this)">15</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=698351" c="1">洛溪</a></cite>
+<em><span>2021-3-14 23:42</span></em>
+</td>
+<td class="num"><a href="thread-1391337-1-1.html" class="xi2">143</a><em>22199</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=synwiki2" c="1">synwiki2</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1391337&goto=lastpost#lastpost">2023-12-17 09:38</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1645111">
+<tr>
+<td class="icn">
+<a href="thread-1645111-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1645111" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1645111';CONTENT_ID='normalthread_1645111';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1645111-1-1.html" onclick="atarget(this)" class="s xst">Vmware虚拟机去虚拟化及附属虚拟机</a>
+ - [阅读权限 <span class="xw1">10</span>]<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 39" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 1651" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1286094">thisxx</a><span class="pipe">&bull;</span>2022-6-5 14:55</p><span class="tps">&nbsp;...<a href="thread-1645111-2-1.html" onclick="atarget(this)">2</a><a href="thread-1645111-3-1.html" onclick="atarget(this)">3</a><a href="thread-1645111-4-1.html" onclick="atarget(this)">4</a><a href="thread-1645111-5-1.html" onclick="atarget(this)">5</a><a href="thread-1645111-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1645111-90-1.html" onclick="atarget(this)">90</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1286094" c="1">thisxx</a></cite>
+<em><span>2022-6-5 14:55</span></em>
+</td>
+<td class="num"><a href="thread-1645111-1-1.html" class="xi2">897</a><em>50681</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=zqtyzhh" c="1">zqtyzhh</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1645111&goto=lastpost#lastpost">2023-12-16 21:33</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1573378">
+<tr>
+<td class="icn">
+<a href="thread-1573378-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1573378" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1573378';CONTENT_ID='normalthread_1573378';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=124">PEtools</a>]</em> <a href="thread-1573378-1-1.html" onclick="atarget(this)" class="s xst">DIE(Detect It Easy) 3.0.3完全汉化版</a>
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 7" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1817279">rogxo</a><span class="pipe">&bull;</span>2022-1-9 01:34</p><span class="tps">&nbsp;...<a href="thread-1573378-2-1.html" onclick="atarget(this)">2</a><a href="thread-1573378-3-1.html" onclick="atarget(this)">3</a><a href="thread-1573378-4-1.html" onclick="atarget(this)">4</a><a href="thread-1573378-5-1.html" onclick="atarget(this)">5</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1817279" c="1">rogxo</a></cite>
+<em><span>2022-1-9 01:34</span></em>
+</td>
+<td class="num"><a href="thread-1573378-1-1.html" class="xi2">45</a><em>7594</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=py66" c="1">py66</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1573378&goto=lastpost#lastpost">2023-12-16 19:07</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1415338">
+<tr>
+<td class="icn">
+<a href="thread-1415338-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1415338" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1415338';CONTENT_ID='normalthread_1415338';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=122">Debuggers</a>]</em> <a href="thread-1415338-1-1.html" onclick="atarget(this)" class="s xst">x64dbg 简体中文版版(Jun 12 2021)</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1443407">映梓</a><span class="pipe">&bull;</span>2021-4-11 17:04</p><span class="tps">&nbsp;...<a href="thread-1415338-2-1.html" onclick="atarget(this)">2</a><a href="thread-1415338-3-1.html" onclick="atarget(this)">3</a><a href="thread-1415338-4-1.html" onclick="atarget(this)">4</a><a href="thread-1415338-5-1.html" onclick="atarget(this)">5</a><a href="thread-1415338-6-1.html" onclick="atarget(this)">6</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1443407" c="1">映梓</a></cite>
+<em><span>2021-4-11 17:04</span></em>
+</td>
+<td class="num"><a href="thread-1415338-1-1.html" class="xi2">50</a><em>7948</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=py66" c="1">py66</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1415338&goto=lastpost#lastpost">2023-12-16 19:06</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1730487">
+<tr>
+<td class="icn">
+<a href="thread-1730487-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1730487" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1730487';CONTENT_ID='normalthread_1730487';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=129">Editors</a>]</em> <a href="thread-1730487-1-1.html" onclick="atarget(this)" class="s xst">WinHex 20.7 x86 x64 完美授权版</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 7" />
+<img src="https://static.52pojie.cn/static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 412" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=30372">suko</a><span class="pipe">&bull;</span>2022-12-26 20:13</p><span class="tps">&nbsp;...<a href="thread-1730487-2-1.html" onclick="atarget(this)">2</a><a href="thread-1730487-3-1.html" onclick="atarget(this)">3</a><a href="thread-1730487-4-1.html" onclick="atarget(this)">4</a><a href="thread-1730487-5-1.html" onclick="atarget(this)">5</a><a href="thread-1730487-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1730487-24-1.html" onclick="atarget(this)">24</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=30372" c="1">suko</a></cite>
+<em><span>2022-12-26 20:13</span></em>
+</td>
+<td class="num"><a href="thread-1730487-1-1.html" class="xi2">238</a><em>15758</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=py66" c="1">py66</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1730487&goto=lastpost#lastpost">2023-12-16 19:05</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1400750">
+<tr>
+<td class="icn">
+<a href="thread-1400750-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1400750" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1400750';CONTENT_ID='normalthread_1400750';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=230">Android Tools</a>]</em> <a href="thread-1400750-1-1.html" onclick="atarget(this)" class="s xst">反编译工具apktool 2.5.0</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 4" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 297" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1443407">映梓</a><span class="pipe">&bull;</span>2021-3-24 12:43</p><span class="tps">&nbsp;...<a href="thread-1400750-2-1.html" onclick="atarget(this)">2</a><a href="thread-1400750-3-1.html" onclick="atarget(this)">3</a><a href="thread-1400750-4-1.html" onclick="atarget(this)">4</a><a href="thread-1400750-5-1.html" onclick="atarget(this)">5</a><a href="thread-1400750-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1400750-11-1.html" onclick="atarget(this)">11</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1443407" c="1">映梓</a></cite>
+<em><span>2021-3-24 12:43</span></em>
+</td>
+<td class="num"><a href="thread-1400750-1-1.html" class="xi2">101</a><em>17865</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=%C6%E6%BF%CD" c="1">奇客</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1400750&goto=lastpost#lastpost">2023-12-16 14:48</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1345176">
+<tr>
+<td class="icn">
+<a href="thread-1345176-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1345176" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1345176';CONTENT_ID='normalthread_1345176';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=123">Disassemblers</a>]</em> <a href="thread-1345176-1-1.html" style="font-weight: bold;color: #3C9D40;" onclick="atarget(this)" class="s xst">IDA Pro 7.5 绿色版（2021.01.28更新）</a>
+ - [阅读权限 <span class="xw1">10</span>]<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 59" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 1439" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1">Hmily</a><span class="pipe">&bull;</span>2021-1-6 15:21</p><span class="tps">&nbsp;...<a href="thread-1345176-2-1.html" onclick="atarget(this)">2</a><a href="thread-1345176-3-1.html" onclick="atarget(this)">3</a><a href="thread-1345176-4-1.html" onclick="atarget(this)">4</a><a href="thread-1345176-5-1.html" onclick="atarget(this)">5</a><a href="thread-1345176-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1345176-60-1.html" onclick="atarget(this)">60</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1" c="1" style="color: #FF0000;">Hmily</a> <a href="home.php?mod=spacecp&ac=profile&op=verify&vid=2" target="_blank"><img src="https://attach.52pojie.cn/common/c8/common_2_verify_icon.gif" class="vm" alt="论坛大牛" title="论坛大牛" /></a></cite>
+<em><span>2021-1-6 15:21</span></em>
+</td>
+<td class="num"><a href="thread-1345176-1-1.html" class="xi2">612</a><em>37724</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=APWN" c="1">APWN</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1345176&goto=lastpost#lastpost">2023-12-16 14:45</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1736240">
+<tr>
+<td class="icn">
+<a href="thread-1736240-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1736240" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1736240';CONTENT_ID='normalthread_1736240';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=131">Unpackers</a>]</em> <a href="thread-1736240-1-1.html" onclick="atarget(this)" class="s xst">强大的查壳工具-Die(Detect It Easy)_V3.08</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 7" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 385" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=664564">wszjf</a><span class="pipe">&bull;</span>2023-1-14 12:36</p><span class="tps">&nbsp;...<a href="thread-1736240-2-1.html" onclick="atarget(this)">2</a><a href="thread-1736240-3-1.html" onclick="atarget(this)">3</a><a href="thread-1736240-4-1.html" onclick="atarget(this)">4</a><a href="thread-1736240-5-1.html" onclick="atarget(this)">5</a><a href="thread-1736240-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1736240-17-1.html" onclick="atarget(this)">17</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=664564" c="1">wszjf</a></cite>
+<em><span>2023-1-14 12:36</span></em>
+</td>
+<td class="num"><a href="thread-1736240-1-1.html" class="xi2">168</a><em>13983</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=SRpojie521" c="1">SRpojie521</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1736240&goto=lastpost#lastpost">2023-12-16 10:33</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1868623">
+<tr>
+<td class="icn">
+<a href="thread-1868623-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1868623" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1868623';CONTENT_ID='normalthread_1868623';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=134">IDA Plugin</a>]</em> <a href="thread-1868623-1-1.html" onclick="atarget(this)" class="s xst">ida.dll compatibility shim</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=10468">风吹屁屁凉</a><span class="pipe">&bull;</span>2023-12-13 16:32</p><span class="tps">&nbsp;...<a href="thread-1868623-2-1.html" onclick="atarget(this)">2</a></span>
+<a href="forum.php?mod=redirect&amp;tid=1868623&amp;goto=lastpost#lastpost" class="xi1">New</a>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=10468" c="1">风吹屁屁凉</a></cite>
+<em><span>2023-12-13 16:32</span></em>
+</td>
+<td class="num"><a href="thread-1868623-1-1.html" class="xi2">13</a><em>1333</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=openm4" c="1">openm4</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1868623&goto=lastpost#lastpost">2023-12-16 08:26</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1707037">
+<tr>
+<td class="icn">
+<a href="thread-1707037-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1707037" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1707037';CONTENT_ID='normalthread_1707037';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=230">Android Tools</a>]</em> <a href="thread-1707037-1-1.html" onclick="atarget(this)" class="s xst">AndroidKiller使用V3签名</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 6" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=692040">yikuaiyingbi</a><span class="pipe">&bull;</span>2022-11-2 15:40</p><span class="tps">&nbsp;...<a href="thread-1707037-2-1.html" onclick="atarget(this)">2</a><a href="thread-1707037-3-1.html" onclick="atarget(this)">3</a><a href="thread-1707037-4-1.html" onclick="atarget(this)">4</a><a href="thread-1707037-5-1.html" onclick="atarget(this)">5</a><a href="thread-1707037-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1707037-8-1.html" onclick="atarget(this)">8</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=692040" c="1">yikuaiyingbi</a></cite>
+<em><span>2022-11-2 15:40</span></em>
+</td>
+<td class="num"><a href="thread-1707037-1-1.html" class="xi2">77</a><em>6970</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=CQGaxm" c="1">CQGaxm</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1707037&goto=lastpost#lastpost">2023-12-16 07:47</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1466188">
+<tr>
+<td class="icn">
+<a href="thread-1466188-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1466188" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1466188';CONTENT_ID='normalthread_1466188';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=339">x64dbg Plugin</a>]</em> <a href="thread-1466188-1-1.html" style="color: #3C9D40;" onclick="atarget(this)" class="s xst">Ewnd Ultimate版本发布了</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=483637">fjqisba</a><span class="pipe">&bull;</span>2021-6-27 15:24</p><span class="tps">&nbsp;...<a href="thread-1466188-2-1.html" onclick="atarget(this)">2</a><a href="thread-1466188-3-1.html" onclick="atarget(this)">3</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=483637" c="1">fjqisba</a></cite>
+<em><span>2021-6-27 15:24</span></em>
+</td>
+<td class="num"><a href="thread-1466188-1-1.html" class="xi2">28</a><em>8277</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=i6720" c="1">i6720</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1466188&goto=lastpost#lastpost">2023-12-16 06:11</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1587985">
+<tr>
+<td class="icn">
+<a href="thread-1587985-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1587985" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1587985';CONTENT_ID='normalthread_1587985';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1587985-1-1.html" onclick="atarget(this)" class="s xst">win10 x64 虚拟机</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 8" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 375" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1456240">hello！</a><span class="pipe">&bull;</span>2022-2-15 09:16</p><span class="tps">&nbsp;...<a href="thread-1587985-2-1.html" onclick="atarget(this)">2</a><a href="thread-1587985-3-1.html" onclick="atarget(this)">3</a><a href="thread-1587985-4-1.html" onclick="atarget(this)">4</a><a href="thread-1587985-5-1.html" onclick="atarget(this)">5</a><a href="thread-1587985-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1587985-20-1.html" onclick="atarget(this)">20</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1456240" c="1">hello！</a></cite>
+<em><span>2022-2-15 09:16</span></em>
+</td>
+<td class="num"><a href="thread-1587985-1-1.html" class="xi2">192</a><em>24421</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=chenlinpsv" c="1">chenlinpsv</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1587985&goto=lastpost#lastpost">2023-12-15 21:50</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1760676">
+<tr>
+<td class="icn">
+<a href="thread-1760676-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1760676" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1760676';CONTENT_ID='normalthread_1760676';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=131">Unpackers</a>]</em> <a href="thread-1760676-1-1.html" onclick="atarget(this)" class="s xst">EnigmaVBUnpacker_0.61解包器汉化版</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1303448">phxi</a><span class="pipe">&bull;</span>2023-3-17 17:00</p><span class="tps">&nbsp;...<a href="thread-1760676-2-1.html" onclick="atarget(this)">2</a><a href="thread-1760676-3-1.html" onclick="atarget(this)">3</a><a href="thread-1760676-4-1.html" onclick="atarget(this)">4</a><a href="thread-1760676-5-1.html" onclick="atarget(this)">5</a><a href="thread-1760676-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1760676-9-1.html" onclick="atarget(this)">9</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1303448" c="1">phxi</a></cite>
+<em><span>2023-3-17 17:00</span></em>
+</td>
+<td class="num"><a href="thread-1760676-1-1.html" class="xi2">82</a><em>5991</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=py66" c="1">py66</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1760676&goto=lastpost#lastpost">2023-12-15 18:07</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1759831">
+<tr>
+<td class="icn">
+<a href="thread-1759831-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1759831" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1759831';CONTENT_ID='normalthread_1759831';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=131">Unpackers</a>]</em> <a href="thread-1759831-1-1.html" onclick="atarget(this)" class="s xst">EnigmaVBUnpacker v0.61（Enigma Virtual Box 解包工具）</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1835791">EternalBlue</a><span class="pipe">&bull;</span>2023-3-16 12:15</p><span class="tps">&nbsp;...<a href="thread-1759831-2-1.html" onclick="atarget(this)">2</a><a href="thread-1759831-3-1.html" onclick="atarget(this)">3</a><a href="thread-1759831-4-1.html" onclick="atarget(this)">4</a><a href="thread-1759831-5-1.html" onclick="atarget(this)">5</a><a href="thread-1759831-6-1.html" onclick="atarget(this)">6</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1835791" c="1">EternalBlue</a></cite>
+<em><span>2023-3-16 12:15</span></em>
+</td>
+<td class="num"><a href="thread-1759831-1-1.html" class="xi2">58</a><em>5121</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=py66" c="1">py66</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1759831&goto=lastpost#lastpost">2023-12-15 18:05</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1797377">
+<tr>
+<td class="icn">
+<a href="thread-1797377-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1797377" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1797377';CONTENT_ID='normalthread_1797377';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1797377-1-1.html" onclick="atarget(this)" class="s xst">VM虚拟机WIN10-LTSC2021精简版镜像压缩包-小而精悍完美运行</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 13" />
+<img src="https://static.52pojie.cn/static/image/common/hot_2.gif" align="absmiddle" alt="heatlevel" title="热度: 464" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=153300">guo0537</a><span class="pipe">&bull;</span>2023-6-14 16:07</p><span class="tps">&nbsp;...<a href="thread-1797377-2-1.html" onclick="atarget(this)">2</a><a href="thread-1797377-3-1.html" onclick="atarget(this)">3</a><a href="thread-1797377-4-1.html" onclick="atarget(this)">4</a><a href="thread-1797377-5-1.html" onclick="atarget(this)">5</a><a href="thread-1797377-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1797377-25-1.html" onclick="atarget(this)">25</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=153300" c="1">guo0537</a></cite>
+<em><span>2023-6-14 16:07</span></em>
+</td>
+<td class="num"><a href="thread-1797377-1-1.html" class="xi2">246</a><em>17203</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=demotang" c="1">demotang</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1797377&goto=lastpost#lastpost">2023-12-15 16:59</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1741621">
+<tr>
+<td class="icn">
+<a href="thread-1741621-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1741621" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1741621';CONTENT_ID='normalthread_1741621';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=241">Mac OSX</a>]</em> <a href="thread-1741621-1-1.html" onclick="atarget(this)" class="s xst">fiddler everywhere 破解流程</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 3" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1984014">xumoyan</a><span class="pipe">&bull;</span>2023-2-3 16:56</p><span class="tps">&nbsp;...<a href="thread-1741621-2-1.html" onclick="atarget(this)">2</a><a href="thread-1741621-3-1.html" onclick="atarget(this)">3</a><a href="thread-1741621-4-1.html" onclick="atarget(this)">4</a><a href="thread-1741621-5-1.html" onclick="atarget(this)">5</a><a href="thread-1741621-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1741621-7-1.html" onclick="atarget(this)">7</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1984014" c="1">xumoyan</a></cite>
+<em><span>2023-2-3 16:56</span></em>
+</td>
+<td class="num"><a href="thread-1741621-1-1.html" class="xi2">68</a><em>8993</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=suruozhong" c="1">suruozhong</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1741621&goto=lastpost#lastpost">2023-12-15 14:51</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1384349">
+<tr>
+<td class="icn">
+<a href="thread-1384349-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1384349" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1384349';CONTENT_ID='normalthread_1384349';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=339">x64dbg Plugin</a>]</em> <a href="thread-1384349-1-1.html" onclick="atarget(this)" class="s xst">[x32Dbg] E_ApiBreak ver:1.0</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 6" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 246" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1312601">赤小瞳</a><span class="pipe">&bull;</span>2021-3-5 19:22</p><span class="tps">&nbsp;...<a href="thread-1384349-2-1.html" onclick="atarget(this)">2</a><a href="thread-1384349-3-1.html" onclick="atarget(this)">3</a><a href="thread-1384349-4-1.html" onclick="atarget(this)">4</a><a href="thread-1384349-5-1.html" onclick="atarget(this)">5</a><a href="thread-1384349-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1384349-17-1.html" onclick="atarget(this)">17</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1312601" c="1">赤小瞳</a></cite>
+<em><span>2021-3-5 19:22</span></em>
+</td>
+<td class="num"><a href="thread-1384349-1-1.html" class="xi2">165</a><em>16040</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=lenhi" c="1">lenhi</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1384349&goto=lastpost#lastpost">2023-12-15 14:29</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1591760">
+<tr>
+<td class="icn">
+<a href="thread-1591760-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1591760" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1591760';CONTENT_ID='normalthread_1591760';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=124">PEtools</a>]</em> <a href="thread-1591760-1-1.html" onclick="atarget(this)" class="s xst">[转帖]Exeinfo PE v0.0.6.9</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1016308">FleTime</a><span class="pipe">&bull;</span>2022-2-22 16:48</p><span class="tps">&nbsp;...<a href="thread-1591760-2-1.html" onclick="atarget(this)">2</a><a href="thread-1591760-3-1.html" onclick="atarget(this)">3</a><a href="thread-1591760-4-1.html" onclick="atarget(this)">4</a><a href="thread-1591760-5-1.html" onclick="atarget(this)">5</a><a href="thread-1591760-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1591760-8-1.html" onclick="atarget(this)">8</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1016308" c="1" style="color: #0000FF;">FleTime</a></cite>
+<em><span>2022-2-22 16:48</span></em>
+</td>
+<td class="num"><a href="thread-1591760-1-1.html" class="xi2">71</a><em>6699</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=freetsp" c="1">freetsp</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1591760&goto=lastpost#lastpost">2023-12-15 11:41</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1719627">
+<tr>
+<td class="icn">
+<a href="thread-1719627-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1719627" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1719627';CONTENT_ID='normalthread_1719627';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1719627-1-1.html" onclick="atarget(this)" class="s xst">11.28『4.0.1版』Fiddler everywhere x64平台的破解 【MacOS Inter版本可用】</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 4" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 229" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=746919">Tisuchen</a><span class="pipe">&bull;</span>2022-11-28 10:59</p><span class="tps">&nbsp;...<a href="thread-1719627-2-1.html" onclick="atarget(this)">2</a><a href="thread-1719627-3-1.html" onclick="atarget(this)">3</a><a href="thread-1719627-4-1.html" onclick="atarget(this)">4</a><a href="thread-1719627-5-1.html" onclick="atarget(this)">5</a><a href="thread-1719627-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1719627-17-1.html" onclick="atarget(this)">17</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=746919" c="1">Tisuchen</a></cite>
+<em><span>2022-11-28 10:59</span></em>
+</td>
+<td class="num"><a href="thread-1719627-1-1.html" class="xi2">161</a><em>14067</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=Ban2001" c="1">Ban2001</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1719627&goto=lastpost#lastpost">2023-12-15 09:28</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1689096">
+<tr>
+<td class="icn">
+<a href="thread-1689096-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1689096" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1689096';CONTENT_ID='normalthread_1689096';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1689096-1-1.html" onclick="atarget(this)" class="s xst">unity逆向手机游戏资源提取+游戏汉化</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1910036">EQlangxian</a><span class="pipe">&bull;</span>2022-9-17 14:53</p><span class="tps">&nbsp;...<a href="thread-1689096-2-1.html" onclick="atarget(this)">2</a><a href="thread-1689096-3-1.html" onclick="atarget(this)">3</a><a href="thread-1689096-4-1.html" onclick="atarget(this)">4</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1910036" c="1">EQlangxian</a></cite>
+<em><span>2022-9-17 14:53</span></em>
+</td>
+<td class="num"><a href="thread-1689096-1-1.html" class="xi2">31</a><em>6732</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=ghostwindows" c="1">ghostwindows</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1689096&goto=lastpost#lastpost">2023-12-15 01:48</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1778985">
+<tr>
+<td class="icn">
+<a href="thread-1778985-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1778985" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1778985';CONTENT_ID='normalthread_1778985';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1778985-1-1.html" onclick="atarget(this)" class="s xst">基于论坛去虚拟化win10整合吾爱工具包2.0且关闭ASLR</a>
+<img src="https://static.52pojie.cn/static/image/stamp/011.small.gif" alt="新人帖" align="absmiddle" />
+ - [阅读权限 <span class="xw1">10</span>]<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 2" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1880488">oneOoen</a><span class="pipe">&bull;</span>2023-4-26 20:02</p><span class="tps">&nbsp;...<a href="thread-1778985-2-1.html" onclick="atarget(this)">2</a><a href="thread-1778985-3-1.html" onclick="atarget(this)">3</a><a href="thread-1778985-4-1.html" onclick="atarget(this)">4</a><a href="thread-1778985-5-1.html" onclick="atarget(this)">5</a><a href="thread-1778985-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1778985-7-1.html" onclick="atarget(this)">7</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1880488" c="1">oneOoen</a></cite>
+<em><span>2023-4-26 20:02</span></em>
+</td>
+<td class="num"><a href="thread-1778985-1-1.html" class="xi2">67</a><em>6429</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=aigc" c="1">aigc</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1778985&goto=lastpost#lastpost">2023-12-14 23:00</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1700978">
+<tr>
+<td class="icn">
+<a href="thread-1700978-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1700978" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1700978';CONTENT_ID='normalthread_1700978';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=125">Packers</a>]</em> <a href="thread-1700978-1-1.html" onclick="atarget(this)" class="s xst">WinLicense x32/x64 v3.1.3.0</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 5" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 221" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1016308">FleTime</a><span class="pipe">&bull;</span>2022-10-18 23:28</p><span class="tps">&nbsp;...<a href="thread-1700978-2-1.html" onclick="atarget(this)">2</a><a href="thread-1700978-3-1.html" onclick="atarget(this)">3</a><a href="thread-1700978-4-1.html" onclick="atarget(this)">4</a><a href="thread-1700978-5-1.html" onclick="atarget(this)">5</a><a href="thread-1700978-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1700978-12-1.html" onclick="atarget(this)">12</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1016308" c="1" style="color: #0000FF;">FleTime</a></cite>
+<em><span>2022-10-18 23:28</span></em>
+</td>
+<td class="num"><a href="thread-1700978-1-1.html" class="xi2">116</a><em>11922</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=codown2017" c="1">codown2017</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1700978&goto=lastpost#lastpost">2023-12-14 15:33</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1544866">
+<tr>
+<td class="icn">
+<a href="thread-1544866-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1544866" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1544866';CONTENT_ID='normalthread_1544866';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=382">Network Analyzer</a>]</em> <a href="thread-1544866-1-1.html" onclick="atarget(this)" class="s xst">BurpSuite v2023.10.3.4汉化无cmd框版（2023.11.26更新）</a>
+<img src="https://static.52pojie.cn/static/image/filetype/image_s.gif" alt="attach_img" title="图片附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 99" />
+<img src="https://static.52pojie.cn/static/image/common/hot_3.gif" align="absmiddle" alt="heatlevel" title="热度: 902" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1786849">Datch</a><span class="pipe">&bull;</span>2021-11-15 19:00</p><span class="tps">&nbsp;...<a href="thread-1544866-2-1.html" onclick="atarget(this)">2</a><a href="thread-1544866-3-1.html" onclick="atarget(this)">3</a><a href="thread-1544866-4-1.html" onclick="atarget(this)">4</a><a href="thread-1544866-5-1.html" onclick="atarget(this)">5</a><a href="thread-1544866-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1544866-44-1.html" onclick="atarget(this)">44</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1786849" c="1">Datch</a></cite>
+<em><span>2021-11-15 19:00</span></em>
+</td>
+<td class="num"><a href="thread-1544866-1-1.html" class="xi2">433</a><em>30155</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=bobolovepojie" c="1">bobolovepojie</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1544866&goto=lastpost#lastpost">2023-12-14 14:30</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1788918">
+<tr>
+<td class="icn">
+<a href="thread-1788918-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1788918" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1788918';CONTENT_ID='normalthread_1788918';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=122">Debuggers</a>]</em> <a href="thread-1788918-1-1.html" onclick="atarget(this)" class="s xst">x64dbg 简体中文修订版 (Nov 18 2023)</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 15" />
+<img src="https://static.52pojie.cn/static/image/common/hot_1.gif" align="absmiddle" alt="heatlevel" title="热度: 312" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1016308">FleTime</a><span class="pipe">&bull;</span>2023-5-23 17:16</p><span class="tps">&nbsp;...<a href="thread-1788918-2-1.html" onclick="atarget(this)">2</a><a href="thread-1788918-3-1.html" onclick="atarget(this)">3</a><a href="thread-1788918-4-1.html" onclick="atarget(this)">4</a><a href="thread-1788918-5-1.html" onclick="atarget(this)">5</a><a href="thread-1788918-6-1.html" onclick="atarget(this)">6</a>..<a href="thread-1788918-13-1.html" onclick="atarget(this)">13</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1016308" c="1" style="color: #0000FF;">FleTime</a></cite>
+<em><span>2023-5-23 17:16</span></em>
+</td>
+<td class="num"><a href="thread-1788918-1-1.html" class="xi2">127</a><em>9320</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=xddt666" c="1">xddt666</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1788918&goto=lastpost#lastpost">2023-12-14 08:35</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1782024">
+<tr>
+<td class="icn">
+<a href="thread-1782024-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1782024" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1782024';CONTENT_ID='normalthread_1782024';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=130">Other</a>]</em> <a href="thread-1782024-1-1.html" onclick="atarget(this)" class="s xst">【工具】二进制文件转为C/C++数组头文件(.h)</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/recommend_1.gif" align="absmiddle" alt="recommend" title="评价指数 1" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=1838194">deadpoolwilson1</a><span class="pipe">&bull;</span>2023-5-6 10:39</p><span class="tps">&nbsp;...<a href="thread-1782024-2-1.html" onclick="atarget(this)">2</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=1838194" c="1">deadpoolwilson1</a></cite>
+<em><span>2023-5-6 10:39</span></em>
+</td>
+<td class="num"><a href="thread-1782024-1-1.html" class="xi2">17</a><em>2728</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=chenlinpsv" c="1">chenlinpsv</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1782024&goto=lastpost#lastpost">2023-12-14 07:45</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1863168">
+<tr>
+<td class="icn">
+<a href="thread-1863168-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1863168" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1863168';CONTENT_ID='normalthread_1863168';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=324">Scripts</a>]</em> <a href="thread-1863168-1-1.html" onclick="atarget(this)" class="s xst">EnigmaHardwareID By CodeExplorer</a>
+<img src="https://static.52pojie.cn/static/image/filetype/common.gif" alt="attachment" title="附件" align="absmiddle" />
+<img src="https://static.52pojie.cn/static/image/common/agree.gif" align="absmiddle" alt="agree" title="帖子被加分" />
+<p class="res-ti"><a href="home.php?mod=space&uid=10468">风吹屁屁凉</a><span class="pipe">&bull;</span>2023-11-29 12:16</p><span class="tps">&nbsp;...<a href="thread-1863168-2-1.html" onclick="atarget(this)">2</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=10468" c="1">风吹屁屁凉</a></cite>
+<em><span>2023-11-29 12:16</span></em>
+</td>
+<td class="num"><a href="thread-1863168-1-1.html" class="xi2">11</a><em>1799</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=CLO2060" c="1">CLO2060</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1863168&goto=lastpost#lastpost">2023-12-13 21:37</a></em>
+</td>
+</tr>
+</tbody>
+<tbody id="normalthread_1821215">
+<tr>
+<td class="icn">
+<a href="thread-1821215-1-1.html" title="有新回复 - 新窗口打开" target="_blank">
+<img src="https://static.52pojie.cn/static/image/common/folder_new.gif" />
+</a>
+</td>
+<th class="new">
+<a href="javascript:;" id="content_1821215" class="showcontent y" title="更多操作" onclick="CONTENT_TID='1821215';CONTENT_ID='normalthread_1821215';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+<em>[<a href="forum.php?mod=forumdisplay&fid=4&amp;filter=typeid&amp;typeid=230">Android Tools</a>]</em> <a href="thread-1821215-1-1.html" onclick="atarget(this)" class="s xst">JEB Decompiler 5.0.0.202308071454</a>
+<p class="res-ti"><a href="home.php?mod=space&uid=227276">83815962</a><span class="pipe">&bull;</span>2023-8-15 00:37</p><span class="tps">&nbsp;...<a href="thread-1821215-2-1.html" onclick="atarget(this)">2</a></span>
+</th>
+<td class="by">
+<cite>
+<a href="home.php?mod=space&amp;uid=227276" c="1">83815962</a></cite>
+<em><span>2023-8-15 00:37</span></em>
+</td>
+<td class="num"><a href="thread-1821215-1-1.html" class="xi2">12</a><em>3048</em></td>
+<td class="by">
+<cite><a href="home.php?mod=space&username=sfz009900" c="1">sfz009900</a></cite>
+<em><a href="forum.php?mod=redirect&tid=1821215&goto=lastpost#lastpost">2023-12-13 20:43</a></em>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+
+<a class="bm_h" href="javascript:;" rel="forum.php?mod=forumdisplay&fid=4&page=2" curpage="1" id="autopbn" totalpage="99" picstyle="0" forumdefstyle="">下一页 &raquo;</a>
+
+<div class="bm bw0 pgs cl">
+<span id="fd_page_bottom"><div class="pg"><strong>1</strong><a href="forum-4-2.html">2</a><a href="forum-4-3.html">3</a><a href="forum-4-4.html">4</a><a href="forum-4-5.html">5</a><a href="forum-4-6.html">6</a><a href="forum-4-7.html">7</a><a href="forum-4-8.html">8</a><a href="forum-4-9.html">9</a><a href="forum-4-10.html">10</a><a href="forum-4-99.html" class="last">... 99</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1" onkeydown="if(event.keyCode==13) {window.location='forum.php?mod=forumdisplay&fid=4&amp;page='+this.value;; doane(event);}" /><span title="共 99 页"> / 99 页</span></label><a href="forum-4-2.html" class="nxt">下一页</a></div></span>
+<span  class="pgb y"><a href="forum.php">返&nbsp;回</a></span>
+<a href="javascript:;" id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=4')" title="发新帖"><img src="https://static.52pojie.cn/static/image/common/pn_post.png" alt="发新帖" /></a></div>
+<div id="diyfastposttop" class="area"></div>
+
+<div id="diyforumdisplaybottom" class="area"></div>
+</div>
+
+</div>
+</div>
+
+
+<div class="wp mtn">
+<div id="diy3" class="area"></div>
+</div>
+	</div>
+<div class="wp vw50_kfc_f"><div class="res-footer-note"><P align=left><BR><FONT color=#ff0000>免责声明：<BR>吾爱破解所发布的一切破解补丁、注册机和注册信息及软件的解密分析文章仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。本站信息来自网络，版权争议与本站无关。您必须在下载后的24个小时之内，从您的电脑中彻底删除上述内容。如果您喜欢该程序，请支持正版软件，购买注册，得到更好的正版服务。如有侵权请邮件与我们联系处理。</FONT></P>
+<P align=right><FONT color=#ff0000 face="Comic Sans MS">Mail To:Service@52pojie.cn</FONT></P></div></div>
+
+
+
+<style type="text/css"> 
+#scrolltop {
+   display: none;
+}
+ul#navmenu ul
+{ 
+display: none; 
+position: absolute; 
+left: -233px;
+bottom: 5px;
+} 
+ul#navmenu li:hover ul ul, 
+ul#navmenu li.iehover ul ul,  { 
+display: none; 
+} 
+ul#navmenu li:hover ul, 
+ul#navmenu ul li:hover ul, 
+ul#navmenu ul ul li:hover ul, 
+ul#navmenu li.iehover ul, 
+ul#navmenu ul li.iehover ul, 
+ul#navmenu ul ul li.iehover ul { 
+display: block; 
+} 
+
+#jz52top a {margin: 6px 0;}
+
+#jz52top { z-index: 200; visibility: visible; right: 5px; }
+
+#jz52topa { visibility: hidden;}
+#jz52top, #jz52top a { border: none;}
+
+
+#jz52top { position: fixed; bottom: 70px; display: block; width: 40px; background: none repeat scroll 0% 0% transparent; border: 0px #cdcdcd solid; border-radius: 3px; border-top: 0; cursor: pointer; }
+#jz52top:hover { text-decoration: none; }
+
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #f8f8f8 url('source/plugin/jz52_top/template/jz52top1.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+
+                a.jz52topa:hover { background-position: -40px 0px !important;}
+a.replyfast { background-position: 0 -40px !important; }
+a.replyfast:hover { background-position: -40px -40px !important;}
+a.returnlist { background-position: 0 -80px !important; }
+a.returnlist:hover { background-position: -40px -80px !important;}
+a.returnboard { background-position: -80px -240px !important; }
+a.returnboard:hover { background-position: -120px -240px !important;}
+a.jzqr { background-position: 0 -120px !important; }
+a.jzqr:hover { background-position: -40px -120px !important;}
+                a.jzwx { background-position: 0 -320px !important; }
+a.jzwx:hover { background-position: -40px -320px !important;}				
+a.jzkf { background-position: -80px 0px !important; }
+a.jzkf:hover { background-position: -120px -0px !important;}
+a.jzfx { background-position: -80px -40px !important; }
+a.jzfx:hover { background-position: -120px -40px !important;}
+.jzfxn { background: #fff !important; width: 231px !important; height: 260px !important; }
+a.jzlast { background-position: -80px -80px !important; }
+a.jzlast:hover { background-position: -120px -80px !important;}
+a.jznext { background-position: -80px -120px !important; }
+a.jznext:hover { background-position: -120px -120px !important;}	
+a.jzxyy { background-position: -80px -120px !important; }
+a.jzxyy:hover { background-position: -120px -360px !important;}			
+a.jzsct { background-position: 0px -160px !important; }
+a.jzsct:hover { background-position: -40px -160px !important;}				
+a.jzscb { background-position: -80px -160px !important; }
+a.jzscb:hover { background-position: -120px -160px !important;}				
+a.jzqqq { background-position: 0px -200px !important; }
+a.jzqqq:hover { background-position: -40px -200px !important;}	
+                a.jzsoso { background-position: -80px -320px !important; }
+a.jzsoso:hover { background-position: -120px -320px !important;}					
+a.jzwo { background-position: -80px -200px !important; }
+a.jzwo:hover { background-position: -120px -200px !important;}
+a.jzzdy { background-position: 0px -240px !important; }
+a.jzzdy:hover { background-position: -40px -240px !important;}
+a.jzfbzt { background-position: 0px -280px !important; }
+a.jzfbzt:hover { background-position: -40px -280px !important;}
+a.jzkfzx { background-position: -80px -280px !important; }
+a.jzkfzx:hover { background-position: -120px -280px !important;}
+
+
+#jzqrn { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzqrn { border: 1px solid rgb(210, 210, 210); text-align: center; }
+#jzqrn p {
+    font-size: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+color: #999;
+    font-family: Microsoft YaHei;
+}
+#jzwon { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzwon { border: 1px solid rgb(210, 210, 210); }
+#jzfxn { border: 1px solid rgb(210, 210, 210); }
+#jzfxn h3 {
+    height: 23px;
+    background: none repeat scroll 0% 0% rgb(250, 250, 250);
+    border-bottom: 1px solid rgb(236, 236, 236);
+    padding: 10px 0px 0px 10px;
+}
+#jzfxn .bdsharebuttonbox { padding: 13px 0px 0px 20px; }
+#jzfxn .bdsharebuttonbox a, #jzfxn .bdsharebuttonbox .bds_more {
+    float: left;
+    font-size: 12px;
+    padding-left: 25px;
+    line-height: 16px;
+text-align: left;
+    height: 16px;
+    background: url("http://bdimg.share.baidu.com/static/api/img/share/icons_1_16.png?v=01d441d0.png") no-repeat scroll 0px 0px ;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0px;
+text-indent: 0;
+    overflow: hidden;
+width: 68px;
+}
+#jzfxn .bdsharebuttonbox .bds_qzone {
+    background-position: 0px -52px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsina {
+    background-position: 0px -104px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqq {
+    background-position: 0px -260px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_renren {
+    background-position: 0px -208px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqf {
+    background-position: 0px -364px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tieba {
+    background-position: 0px -728px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_sqq {
+    background-position: 0px -2652px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_hi {
+    background-position: 0px -416px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_isohu {
+    background-position: 0px -3016px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_weixin {
+    background-position: 0px -1612px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_t163 {
+    background-position: 0px -832px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsohu {
+    background-position: 0px -520px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_baidu {
+    background-position: 0px -2600px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_qq {
+    background-position: 0px -624px !important;
+}
+#jz52top a b {
+    visibility: hidden;
+    font-weight: normal;
+}
+</style> 
+
+ 
+
+<div id="jz52top" >
+    	
+	
+    
+<span>	
+<a  href="index.php" hidefocus="true" class="returnboard" title="返回首页"><b>返回首页</b></a>
+</span>
+    
+    
+<span><a rel="nofollow" title="搜索" class="jzsoso" href="javascript:;" onclick="showWindow('jzso','plugin.php?id=jz52_top:jz52_so')"><b>搜索</b></a></span>	
+
+    
+<span><ul id="navmenu"> <li><a title="关注微信"  class="jzwx" href="javascript:void(0)"><b>关注微信</b></a> <ul> <div id="jzqrn">
+<img src="https://attach.52pojie.cn/weixin.jpg" width="228" height="228" />
+<p>微信签到每天都送论坛币！</p>
+</div> </ul></li></ul> </span>	
+
+<span>
+<ul id="navmenu"> 
+<li><a title="个人中心" class="jzwo" >
+
+<b>个人中心</b></a> 
+<ul> <div id="jzwon">
+
+<style type="text/css">
+
+#jzmms{padding: 2px; text-align: right; }
+.navbar-unread {
+    background-color: #E74C3C;
+    border-radius: 30px;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    min-width: 8px;
+    padding: 0px 4px;
+    right: 0px;
+    text-align: center;
+    text-shadow: none;
+    z-index: 10;
+align: right;
+}
+
+.navbar-unreadn {
+    background: url("source/plugin/jz52_top/template/mmsn.png") no-repeat scroll 0px 0px ;
+    border-radius: 30px;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    min-width: 8px;
+    padding: 0px 4px;
+    right: 0px;
+    text-align: center;
+    text-shadow: none;
+    z-index: 10;
+align: right;
+}	
+
+#jzgrzxkp {
+height: 260px;
+width: 231px;
+background:#f2f6f8;
+font-family: Microsoft YaHei;
+}
+
+#jzgrzxkp .jzgrzxkptop {
+height: 140px;
+background:   #0079b8 ;
+color: #fff;
+}
+#jzgrzxkp .jzgrzxkptop a{
+
+color: #fff;
+}
+
+#jzgrzxkp .jzgrzxkptop h3 {
+ height: 16px;
+font-weight:normal;
+    padding: 8px 0px 0px 10px;
+font-size: 16px;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpthtle {
+height: 35px;
+}
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg {
+height: 65px;
+text-align:center;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg img {
+width: 54px;
+width: 54px;
+border-radius: 100px;
+margin-top: 2px;
+
+
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg .jzgrzxkpimgn {
+width: 58px;
+height: 58px;
+border-radius: 100px;
+background: none repeat scroll 0% 0% #fff;
+margin-top: 5px;
+margin-right: auto;
+    margin-left: auto;
+}
+
+#jzgrzxkp .jzyhm {
+    font-size: 15px;
+    line-height: 22px;
+text-align: center;
+padding-bottom: 10px;
+text-align:center;
+}
+
+#jzgrzxkp .jzyhm a {
+    width: 231px;
+    height: 15px;
+text-align:center;
+background: none ;
+}
+
+#jzgrzxkp .jzgrzxkpbox  { height: 120px; background:#f1f1f1;}
+
+#jzgrzxkp .jzgrzxkpbox a { background:url("source/plugin/jz52_top/template/gr1.png") no-repeat 0 0  ;  width:57px;height:60px;float:left; margin: 0px;}
+
+.box01{background-position: 0px 0px !important;}
+.box02{background-position: -57px 0px !important;}
+.box03{background-position: -114px 0px !important;}
+.box04{background-position: -171px 0px !important;}
+
+.box05{background-position: 0px -60px !important;}
+.box06{background-position: -57px -60px !important;}
+.box07{background-position: -114px -60px !important;}
+.box08{background-position: -171px -60px !important;}
+.box09{background-position: 0px -120px !important;}
+
+
+#jz52-grzx-skin a{
+margin: 0px;
+top: 0px;
+height: 20px;
+width: 20px;
+overflow: hidden;
+background-image: url('source/plugin/jz52_top/template/wei.png');
+background-position: 0px 0px;
+background-repeat: no-repeat;
+position: absolute;
+display: block;
+right: 0px;
+}
+
+</style>
+
+<div id="jzgrzxkp" class="jzgrzxkp">
+
+<div class="jzgrzxkptop">
+<div class="jzgrzxkpthtle">
+<h3>个人中心</h3>
+</div>  
+<div class="jzgrzxkpimg">
+</div>
+   
+<div class="jzyhm"><a href="member.php?mod=logging&amp;action=login" onClick="showWindow('login', this.href)">登录或注册</a></div>
+ 
+</div>
+<div class="jzgrzxkpbox">
+
+<a href="home.php?mod=space&amp;do=favorite&amp;view=me" class="box01" target="_blank"  title="收藏" ></a>
+
+<a href="forum.php?mod=guide&amp;view=my" class="box02" target="_blank"  title="帖子" ></a>
+
+<a href="home.php?mod=space&amp;do=friend" class="box03" class="box04" target="_blank"  title="好友" ></a>
+
+<a href="home.php?mod=space&amp;do=notice" class="box09" target="_blank"  title="提醒" >
+
+</a>
+
+<a href="home.php?mod=space&amp;do=pm" class="box04" target="_blank"  title="消息" >
+
+</a>
+
+<a href="home.php?mod=spacecp" class="box05" target="_blank" title="设置" ></a>
+
+<a href="home.php?mod=medal" class="box06" target="_blank" title="勋章" ></a>
+
+<a href="home.php?mod=task" class="box07" target="_blank" title="任务" ></a>
+
+</div>
+</div>
+</div>
+</ul>
+</li>
+</ul>
+</span>	
+
+<span>
+<DIV style="DISPLAY: none" id="goTopBtn" ><a title="返回顶部" class="jz52topa" ><b>返回顶部</b></a></DIV>
+</span>
+    
+
+</div>
+
+<div id="ft" class="wp cl">
+<div id="flk" class="y">
+<p>
+<a href="forum.php?mod=rss" target="_blank" >RSS订阅</a><span class="pipe">|</span><a href="forum.php?mod=misc&action=showdarkroom" >小黑屋</a><span class="pipe">|</span><a href="thread-1732923-1-1.html" target="_blank" >处罚记录</a><span class="pipe">|</span><a href="mailto:Service@52pojie.cn" target="_blank" >联系我们</a><span class="pipe">|</span><strong><a href="https://www.52pojie.cn" target="_blank">吾爱破解 - LCG - LSG</a></strong>
+( <a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">京ICP备16042023号 | 京公网安备 11010502030087号</a> )</p>
+<p class="xs0">
+GMT+8, 2023-12-18 18:38<span id="debuginfo">
+</span>
+</p>
+</div>
+<div id="frt">
+<p>Powered by <strong>Discuz!</strong></p>
+<p class="xs0">Copyright &copy; 2001-2020, Tencent Cloud.</p>
+</div></div>
+
+<div id="scrolltop">
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>返回顶部</b></a></span>
+<span>
+<a href="forum.php" hidefocus="true" class="returnboard" title="返回版块"><b>返回版块</b></a>
+</span>
+</div>
+
+<script>var STYLEID = '1', STATICURL = 'https://static.52pojie.cn/static/', IMGDIR = 'https://static.52pojie.cn/static/image/common', VERHASH = 'KBQ', charset = 'gbk', discuz_uid = '0', cookiepre = 'htVC_2132_', cookiedomain = '', cookiepath = '/', showusercard = '0', attackevasive = '0', disallowfloat = 'login|newthread', creditnotice = '1|威望|点,2|吾爱币|CB,3|贡献值|点,4|悬赏值|点,5|采纳率|%,6|热心值|点,8|违规|次', defaultstyle = './template/default/style/t5', REPORTURL = 'aHR0cHM6Ly93d3cuNTJwb2ppZS5jbi9mb3J1bS00LTEuaHRtbA==', SITEURL = 'https://www.52pojie.cn/', JSPATH = 'https://static.52pojie.cn/cache/', CSSPATH = 'https://static.52pojie.cn/cache/style_', DYNAMICURL = '';</script><script src="https://static.52pojie.cn/cache/common.js?KBQ"></script><script>HTMLNODE.className += ' widthauto'</script><script src="https://static.52pojie.cn/cache/forum.js?KBQ"></script><script src="https://static.52pojie.cn/cache/logging.js?KBQ"></script><script>
+initSearchmenu('scbar', '');
+</script><script>showTypes('thread_types');</script><script>var lasttime = 1702895924;var listcolspan= '5';</script><script>hideStickThread();</script><script src="https://static.52pojie.cn/cache/autoloadpage.js?KBQ"></script><script>document.onkeyup = function(e){keyPageScroll(e, 0, 1, 'forum.php?mod=forumdisplay&fid=4&filter=&orderby=lastpost&', 1);}</script><script>checkForumnew_handle = setTimeout(function () {checkForumnew(4, lasttime);}, checkForumtimeout);</script><script>fixed_top_nv();</script><script type="text/x-mathjax-config">
+	MathJax.Hub.Config({ 
+		tex2jax: {
+			inlineMath: [["$","$"], ['\\(','\\)']],
+			processClass: "parsedown-markdown",
+			ignoreClass: "pct",
+		},
+		skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+		showProcessingMessages: false,
+		messageStyle: "none",
+		TeX: { equationNumbers: {autoNumber: "AMS"} },
+	});
+</script><script src="https://lib.baomitu.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&noContrib"></script><script>
+var mw_brush = eval({"asm":["Asm","true"],"c":["C","true"],"cpp":["C++","true"],"csharp":["C#","true"],"java":["Java","true"],"python":["Python","true"],"lua":["Lua","true"],"html":["HTML","true"],"php":["PHP","true"],"javascript":["JavaScript","true"],"css":["CSS","true"],"golang":["Golang","true"],"objc":["Objective-C","true"],"applescript":["AppleScript","true"],"actionscript3":["Actionscript3","true"],"bash":["Bash shell","true"],"coldfusion":["ColdFusion","true"],"delphi":["Delphi","true"],"diff":["Diff","true"],"erlang":["Erlang","true"],"groovy":["Groovy","true"],"javafx":["JavaFX","true"],"pascal":["Pascal","true"],"patch":["Patch","true"],"perl":["Perl","true"],"text":["Plain Text","true"],"powershell":["PowerShell","true"],"ruby":["Ruby","true"],"rails":["Ruby on Rails","true"],"sass":["Sass","true"],"scala":["Scala","true"],"scss":["Scss","true"],"shell":["Shell","true"],"sql":["SQL","true"],"vb":["Visual Basic","true"],"vbnet":["Visual Basic .NET","true"],"xhtml":["XHTML","true"],"xml":["XML","true"],"xslt":["XSLT","true"],"aauto":["AAuto","true"],"il":["IL","true"]});
+var mw_gutter = 1;
+var mw_lang_codebox = { 'select_lang': '请输入要插入的代码<br>选择语言：', 'show_gutter': '显示行号：', 'your_code': '你的代码：', 'close': '关闭', 'submit': '提交', 'cancle': '取消' };
+</script><script src="https://static.52pojie.cn/mw_syntaxhighlighter/static/js/mw_syntaxhighlighter.js?KBQ"></script><script reload="1">mw_syntaxhighlighter("fastpost");</script><script> 
+// JavaScript Document
+function goTopEx(){
+ var obj=document.getElementById("goTopBtn");
+ function getScrollTop(){
+ return document.documentElement.scrollTop || document.body.scrollTop;
+ }
+ function setScrollTop(value){
+ if(document.documentElement.scrollTop){
+ document.documentElement.scrollTop=value;
+ }else{
+ document.body.scrollTop=value;
+ }
+ 
+ } 
+ window.onscroll=function(){getScrollTop()>0?obj.style.display="":obj.style.display="none";
+ var h=document.body.scrollHeight - getScrollTop() - obj.offsetTop - obj.offsetHeight;
+ obj.style.bottom=0+"px";
+ if(h<350){
+ obj.style.bottom=340+"px";
+ obj.style.top="auto";
+ }
+
+ 
+ }
+ obj.onclick=function(){
+
+ var goTop=setInterval(scrollMove,10);
+ function scrollMove(){
+ setScrollTop(getScrollTop()/1.1);
+ if(getScrollTop()<1)clearInterval(goTop);
+
+ }
+ }
+ }
+
+</script><SCRIPT type=text/javascript>goTopEx();</SCRIPT><script>
+var _hmt = _hmt || [];
+(function() {
+ var hm = document.createElement("script");
+ hm.src = "https://hm.baidu.com/hm.js?46d556462595ed05e05f009cdafff31a";
+ var s = document.getElementsByTagName("script")[0]; 
+ s.parentNode.insertBefore(hm, s);
+})();
+</script><script>_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script></body>
+</html>
