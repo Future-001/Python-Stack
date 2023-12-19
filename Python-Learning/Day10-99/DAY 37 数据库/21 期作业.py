@@ -1,5 +1,5 @@
 # 数据库练习
-# 1.txt.创建一个数据库，ftp
+# 1.创建一个数据库，ftp
 # 2.创建一张表，userinfo表
 # 存储三个字段：id,username,password
 # 3.向这张表中插入3条数据

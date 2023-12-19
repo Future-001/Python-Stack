@@ -1,4 +1,4 @@
-# 1.txt.整理Flask知识点
+# 1.整理Flask知识点
 #
 # 1.txt.Request
 # 2.Response

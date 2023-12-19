@@ -13,7 +13,7 @@ def producer(name,url,q):
     q.put((name,ret.text))
 
 def Consumer(q):
-    while True:
+    while True:   # 为什么用while 不用 for 规定了长度呢？
         content = q.get()
         if content==None:break
         with open("%s.html" %content[0],encoding = "utf-8",mode="w") as f:
